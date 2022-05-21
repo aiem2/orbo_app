@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <nav class="navbar">
+        <div class="container cont_logo">
+          <a class="navbar-brand" href="/">
+             <%= image_tag "Logo-blanco.png", :width => 40, :height =>40, :crop => :fill, :style => "margin-left:10%", :style => "margin-right:2%"%></a>
+        </div>
+    </nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item mt-2 me-3">
+          <%=link_to 'Mapa', maps_show_path, class: "link_navbar"%>
+        </li>
+        <li class="nav-item mt-2 me-3">
+          <%=link_to 'Beneficios', benefits_path, class: "link_navbar"%>
+        </li>
+        <li class="nav-item mt-2 me-3">
+          <%=link_to 'Partners', partners_path, class: "link_navbar"%>
+        </li>
+        <li class="nav-item mt-2 me-3">
+          <%=link_to 'Contenido descargable', contents_path, class: "link_navbar"%>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar Partner" aria-label="Search" >
+        <button id="buscador" class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
