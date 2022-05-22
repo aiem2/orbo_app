@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_service: 2022-05-21
+  type_service: MyString
+  description: MyText
+  user: one
+  partner: one
+
+two:
+  date_service: 2022-05-21
+  type_service: MyString
+  description: MyText
+  user: two
+  partner: two

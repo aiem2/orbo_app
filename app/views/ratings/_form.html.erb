@@ -1,0 +1,42 @@
+<%= form_with(model: rating) do |form| %>
+  <% if rating.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+      <ul>
+        <% rating.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :date_service, style: "display: block" %>
+    <%= form.date_field :date_service %>
+  </div>
+
+  <div>
+    <%= form.label :type_service, style: "display: block" %>
+    <%= form.text_field :type_service %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :partner_id, style: "display: block" %>
+    <%= form.text_field :partner_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

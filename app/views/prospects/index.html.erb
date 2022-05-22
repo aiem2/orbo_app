@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Prospects</h1>
+
+<div id="prospects">
+  <% @prospects.each do |prospect| %>
+    <%= render prospect %>
+    <p>
+      <%= link_to "Show this prospect", prospect %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New prospect", new_prospect_path %>

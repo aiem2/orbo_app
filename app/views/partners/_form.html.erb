@@ -1,0 +1,87 @@
+<%= form_with(model: partner) do |form| %>
+  <% if partner.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(partner.errors.count, "error") %> prohibited this partner from being saved:</h2>
+
+      <ul>
+        <% partner.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :area, style: "display: block" %>
+    <%= form.text_field :area %>
+  </div>
+
+  <div>
+    <%= form.label :liason_name, style: "display: block" %>
+    <%= form.text_field :liason_name %>
+  </div>
+
+  <div>
+    <%= form.label :liason_phone, style: "display: block" %>
+    <%= form.text_field :liason_phone %>
+  </div>
+
+  <div>
+    <%= form.label :liason_mail, style: "display: block" %>
+    <%= form.text_field :liason_mail %>
+  </div>
+
+  <div>
+    <%= form.label :logo_url, style: "display: block" %>
+    <%= form.text_area :logo_url %>
+  </div>
+
+  <div>
+    <%= form.label :web, style: "display: block" %>
+    <%= form.text_field :web %>
+  </div>
+
+  <div>
+    <%= form.label :fb, style: "display: block" %>
+    <%= form.text_field :fb %>
+  </div>
+
+  <div>
+    <%= form.label :ig, style: "display: block" %>
+    <%= form.text_field :ig %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -75,3 +75,4 @@ end
 gem 'activeadmin'
 gem 'devise'
 gem 'cocoon'
+gem 'sass-rails'
