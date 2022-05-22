@@ -10,24 +10,29 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item mt-2 me-3">
-          <%=link_to 'Mapa', maps_show_path, class: "link_navbar"%>
-        </li>
-        <li class="nav-item mt-2 me-3">
-          <%=link_to 'Beneficios', benefits_path, class: "link_navbar"%>
-        </li>
-        <li class="nav-item mt-2 me-3">
-          <%=link_to 'Partners', partners_path, class: "link_navbar"%>
-        </li>
-        <li class="nav-item mt-2 me-3">
-          <%=link_to 'Contenido descargable', contents_path, class: "link_navbar"%>
-        </li>
+          <% unless user_signed_in? %>
+      <ul class="nav navbar-nav">
+        <li class="mx-3"><%= link_to "Register", new_user_registration_path, style: "color:white; text-decoration:none" %></li>
+        <li class="mx-3"><%= link_to "Sign in", new_user_session_path, style: "color:white; text-decoration:none" %></li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar Partner" aria-label="Search" >
-        <button id="buscador" class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
+      <% end %>
+      <% if user_signed_in? %>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mt-2 mx-3">
+            <%=link_to 'Mapa', maps_show_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mt-2 mx-3">
+            <%=link_to 'Beneficios', benefits_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mt-2 mx-3">
+            <%=link_to 'Partners', partners_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mt-2 mx-3">
+            <%=link_to 'Contenido descargable', contents_path, style: "color:white; text-decoration:none"%>
+          </li>
+        </ul>
+        <li class="nav navbar-nav navbar-right"><%= link_to "Log out", destroy_user_session_path, data:{turbo_method: :delete}, style:"color:white; text-decoration:none; margin-right:2vw" %></li>
+      <% end %>
     </div>
   </div>
 </nav>
