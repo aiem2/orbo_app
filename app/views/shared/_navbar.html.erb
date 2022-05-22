@@ -10,11 +10,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <% unless user_signed_in? %>
-      <ul class="nav navbar-nav">
-        <li class="mx-3"><%= link_to "Register", new_user_registration_path, style: "color:white; text-decoration:none" %></li>
-        <li class="mx-3"><%= link_to "Sign in", new_user_session_path, style: "color:white; text-decoration:none" %></li>
-      </ul>
+      <% unless user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class="mx-3"><%= link_to "Register", new_user_registration_path, style: "color:white; text-decoration:none" %></li>
+          <li class="mx-3"><%= link_to "Sign in", new_user_session_path, style: "color:white; text-decoration:none" %></li>
+        </ul>
       <% end %>
       <% if user_signed_in? %>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
