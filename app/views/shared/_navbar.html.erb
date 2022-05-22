@@ -31,8 +31,21 @@
             <%=link_to 'Contenido descargable', contents_path, style: "color:white; text-decoration:none"%>
           </li>
         </ul>
-        <li class="nav navbar-nav navbar-right"><%= link_to "Log out", destroy_user_session_path, data:{turbo_method: :delete}, style:"color:white; text-decoration:none; margin-right:2vw" %></li>
+      
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle mx-5" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white; text-decoration:none">
+            Cuenta
+          </a>
+          <ul class="dropdown-menu px-3 text-center" aria-labelledby="navbarDropdown" style="background-color: #640000; color: white">
+            <li><%=link_to 'Editar mi Perfil', edit_user_registration_path, style:"color:white; text-decoration:none" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Log out", destroy_user_session_path, data:{turbo_method: :delete}, style:"color:white; text-decoration:none" %></li>
+          </ul>
+        </div>
+      
       <% end %>
     </div>
   </div>
 </nav>
+
+
