@@ -68,12 +68,13 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Actualizar perfil" %>
+    <br>
+    <%= f.submit "Actualizar perfil", class:"btn", id:"boton" %>
   </div>
 <% end %>
 <br>
 <h3>Cancelar la cuenta</h3>
-
-<%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro?" }, method: :delete %>
+<br>
+<%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "¿Está seguro?" }, method: :delete, class:"btn", id:"boton" %>
 <br>
 <%= link_to "Volver", :back %>

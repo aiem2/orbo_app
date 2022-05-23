@@ -13,7 +13,7 @@
     <%= f.label :región%>
     <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
 
-    <%= f.submit value='Buscar'%>
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
     
     <%=link_to 'Todos', partners_path, class: "btn", id: "boton" %>
   <% end %>
