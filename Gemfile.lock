@@ -290,6 +290,7 @@ DEPENDENCIES
   cocoon
   debug
   devise
+  ffi (~> 1.15)
   hirb
   importmap-rails
   jbuilder
