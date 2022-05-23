@@ -1,72 +1,79 @@
 <div id="<%= dom_id partner %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Nombre Partner:</strong>
     <%= partner.name %>
+  </p>
+  
+  <p>
+    <strong>Orbo Área:</strong>
+    <%= partner.area %>
+  </p>
+  
+  <p>
+    <strong>Teléfono:</strong>
+    <%= partner.phone %>
   </p>
 
   <p>
     <strong>Email:</strong>
-    <%= partner.email %>
+    <%= mail_to partner.email, partner.email%>
+  </p>
+
+  
+  <p>
+    <strong>Página web:</strong>
+    <%= link_to partner.web, partner.web, :target => :_blank %>
   </p>
 
   <p>
-    <strong>Area:</strong>
-    <%= partner.area %>
+    <strong>Facebook:</strong>
+    <%= link_to partner.fb, partner.fb, :target => :_blank %>
   </p>
 
   <p>
-    <strong>Liason name:</strong>
-    <%= partner.liason_name %>
+    <strong>Instagram:</strong>
+    <%= link_to partner.ig, partner.ig, :target => :_blank %>
   </p>
 
   <p>
-    <strong>Liason phone:</strong>
-    <%= partner.liason_phone %>
-  </p>
-
-  <p>
-    <strong>Liason mail:</strong>
-    <%= partner.liason_mail %>
-  </p>
-
-  <p>
-    <strong>Logo url:</strong>
-    <%= partner.logo_url %>
-  </p>
-
-  <p>
-    <strong>Web:</strong>
-    <%= partner.web %>
-  </p>
-
-  <p>
-    <strong>Fb:</strong>
-    <%= partner.fb %>
-  </p>
-
-  <p>
-    <strong>Ig:</strong>
-    <%= partner.ig %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
+    <strong>Descripción:</strong>
     <%= partner.description %>
   </p>
 
   <p>
-    <strong>Address:</strong>
+    <strong>Dirección:</strong>
     <%= partner.address %>
   </p>
 
   <p>
-    <strong>City:</strong>
+    <strong>Ciudad:</strong>
     <%= partner.city %>
   </p>
 
   <p>
-    <strong>State:</strong>
+    <strong>Región:</strong>
     <%= partner.state %>
   </p>
+
+  <% if current_user.admin? %>
+    <br>
+    <h3>Información de uso interno:</h3>
+    <p>
+      <strong>Nombre de contacto:</strong>
+      <%= partner.liason_name %>
+    </p>
+
+    <p>
+      <strong>Teléfono de contacto:</strong>
+      <%= partner.liason_phone %>
+    </p>
+
+    <p>
+      <strong>Mail de contacto:</strong>
+      <%= partner.liason_mail %>
+    </p>
+
+  <% end %>
+
 
 </div>

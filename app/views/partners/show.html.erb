@@ -1,10 +1,17 @@
 <p style="color: green"><%= notice %></p>
-
+<%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
+<br>
+<br>
+<h3 class="titulo">Información del Partner</h3>
 <%= render @partner %>
 
 <div>
-  <%= link_to "Edit this partner", edit_partner_path(@partner) %> |
-  <%= link_to "Back to partners", partners_path %>
+  <% if current_user.admin?%>
+    <%= link_to "Editar Partner", edit_partner_path(@partner) %>
+    <br>
+    <br>
+    <%= button_to "Eliminar Partner", @partner, method: :delete %>
+  <% end%>
+  <br>
 
-  <%= button_to "Destroy this partner", @partner, method: :delete %>
 </div>

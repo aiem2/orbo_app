@@ -12,7 +12,7 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :Nombre_partner, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
@@ -22,28 +22,18 @@
   </div>
 
   <div>
-    <%= form.label :area, style: "display: block" %>
-    <%= form.text_field :area %>
-  </div>
-
-  <div>
-    <%= form.label :liason_name, style: "display: block" %>
-    <%= form.text_field :liason_name %>
-  </div>
-
-  <div>
-    <%= form.label :liason_phone, style: "display: block" %>
-    <%= form.text_field :liason_phone %>
-  </div>
-
-  <div>
-    <%= form.label :liason_mail, style: "display: block" %>
-    <%= form.text_field :liason_mail %>
+    <%= form.label :orbo_area, style: "display: block" %>
+    <%= form.select :area, @areas, :prompt => "Selecciones una opción:"%>
   </div>
 
   <div>
     <%= form.label :logo_url, style: "display: block" %>
     <%= form.text_area :logo_url %>
+  </div>
+
+  <div>
+    <%= form.label :teléfono, style: "display: block" %>
+    <%= form.text_field :phone %>
   </div>
 
   <div>
@@ -62,25 +52,45 @@
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :descripción, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :address, style: "display: block" %>
+    <%= form.label :dirección, style: "display: block" %>
     <%= form.text_field :address %>
   </div>
 
   <div>
-    <%= form.label :city, style: "display: block" %>
+    <%= form.label :ciudad, style: "display: block" %>
     <%= form.text_field :city %>
   </div>
 
   <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.text_field :state %>
+    <%= form.label :Región, style: "display: block" %>
+    <%= form.select :state, @regiones, :prompt => 'Seleccione una Región' %>
   </div>
 
+  <% if current_user.admin? %>
+    <br>
+    <h3>Información de uso interno:</h3>
+    <div>
+      <%= form.label :nombre_contacto, style: "display: block" %>
+      <%= form.text_field :liason_name %>
+    </div>
+
+    <div>
+      <%= form.label :teléfono_contacto, style: "display: block" %>
+      <%= form.text_field :liason_phone %>
+    </div>
+
+    <div>
+      <%= form.label :mail_contacto, style: "display: block" %>
+      <%= form.text_field :liason_mail %>
+    </div>
+
+  <% end %>
+  <br>
   <div>
     <%= form.submit %>
   </div>

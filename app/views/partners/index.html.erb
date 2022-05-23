@@ -1,14 +1,65 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="titulo">Partners</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Partner', new_partner_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+<h5>Selecciona tu Región para buscar nuestros Partners:</h5>
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :area_eq, 'Area'%>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
 
-<h1>Partners</h1>
+    <%= f.label :región%>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
 
-<div id="partners">
-  <% @partners.each do |partner| %>
-    <%= render partner %>
-    <p>
-      <%= link_to "Show this partner", partner %>
-    </p>
+    <%= f.submit value='Buscar'%>
+    
+    <%=link_to 'Todos', partners_path, class: "btn", id: "boton" %>
   <% end %>
-</div>
+<br>
 
-<%= link_to "New partner", new_partner_path %>
+<table class="table table-light table-stripped mr-5">
+  <thead>
+    <tr>
+      <th scope="col">Logo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Partner</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Página web</th>
+      <th scope="col">Instagram</th>
+      <th scope="col">Facebook</th>
+      <th scope="col">Whatsapp</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @partners.each do |partner|%>
+    <tr>
+        <td><%= image_tag partner.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><%= partner.area %></td>
+        <td><%= partner.name %></td>
+        <td><%= partner.email %></td>
+        <td><%if partner.web?%>
+            <%= link_to 'Página web', partner.web, target: :_blank %></td>
+            <%end%>
+        <td><%if partner.ig?%>
+            <%= link_to 'Instagram', partner.ig, target: :_blank %></td>
+            <%end%>
+        <td><%if partner.fb?%>
+            <%= link_to 'Facebook', partner.fb, target: :_blank %></td>
+            <%end%>
+        <td><%if partner.phone?%>
+            <%= link_to 'Whatsapp', "https://wa.me/#{partner.phone}", target: :_blank %></td>
+            <%end%>
+        <td><%= partner.city %></td>
+        <td><%= partner.state %></td>
+        <td><%= partner.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', partner%> </td>
+    </tr>
+    <% end %>  
+  <tbody>
+</table>

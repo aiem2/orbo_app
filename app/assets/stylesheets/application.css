@@ -20,3 +20,11 @@
 .titulo{
     color: #640000;
 }
+
+#boton{
+    background-color: #640000;
+    color: white;
+    text-decoration: none;
+}
+
+
