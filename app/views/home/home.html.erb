@@ -8,7 +8,35 @@
 </div>
 <br>
 <div class="d-flex justify-content-center">
-    <h4>Revisa nuestros Partners, Beneficios y Contenido descargable:</h4>
+    <div class="card mx-3" style="width: 18rem;">
+        <%= image_tag 'beneficios.png', alt: 'Beneficios de nuestros Partners'%>
+        <div class="card-body">
+            <h5 class="card-title titulo center">Orbo Beneficios</h5>
+            <p class="card-text titulo">Aprovecha todos los beneficios de nuestros Partners</p>
+            <%=link_to 'Beneficios', benefits_path, class:"btn", id:"boton-amarillo"%>
+        </div>
+    </div>
+
+    <div class="card mx-3" style="width: 18rem;">
+        <%= image_tag 'partners.png', alt: 'Nuestros Partners'%>
+        <div class="card-body">
+            <h5 class="card-title titulo center">Orbo Partners</h5>
+            <p class="card-text titulo">Sorpréndete con nuestro catálogo de Partners</p>
+            <%=link_to 'Orbo Partners', partners_path, class:"btn", id:"boton-amarillo"%>
+        </div>
+    </div>
+
+    <div class="card mx-3" style="width: 18rem;">
+        <%= image_tag 'descargas.png', alt: 'Descarga nuestro material'%>
+        <div class="card-body">
+            <h5 class="card-title titulo center">Orbo Descargas</h5>
+            <p class="card-text titulo">Aprende con nuestro contenido colaborativo</p>
+            <%=link_to 'Orbo Descargas', contents_path, class:"btn", id:"boton-amarillo"%>
+        </div>
+    </div>
+
+
+    
 </div>
 <br>
 
