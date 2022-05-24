@@ -1,5 +1,6 @@
 class PartnersController < InheritedResources::Base
   before_action :set_partner, only: %i[ show edit update destroy ]
+  before_action :must_be_admin, only: %i[new create edit update destroy]
 
   # GET /partners or /partners.json
   def index
@@ -76,6 +77,12 @@ class PartnersController < InheritedResources::Base
 
     def partner_params
       params.require(:partner).permit(:name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :phone)
+    end
+
+    def must_be_admin
+      unless current_user && current_user.admin?
+        redirect_to root_path, notice: "No puede acceder a esta sección"
+      end
     end
 
 end
