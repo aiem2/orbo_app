@@ -65,12 +65,12 @@
 
     <p>
       <strong>Teléfono de contacto:</strong>
-      <%= partner.liason_phone %>
+      <%= link_to "+#{partner.liason_phone}", "https://wa.me/#{partner.liason_phone}", :target => :_blank %>
     </p>
 
     <p>
       <strong>Mail de contacto:</strong>
-      <%= partner.liason_mail %>
+      <%= mail_to partner.lisaon_mail, partner.liason_mail%>
     </p>
 
   <% end %>
