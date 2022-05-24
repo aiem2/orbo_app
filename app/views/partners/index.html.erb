@@ -23,7 +23,7 @@
   <% end %>
 <br>
 
-<table class="table table-light table-stripped mr-5">
+<table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
       <th scope="col">Logo</th>
@@ -64,6 +64,7 @@
         <td><%= partner.description.truncate(80) %></td>
         <td><%= link_to 'Mostrar', partner%> </td>
     </tr>
+    <script>$('#sortTable').DataTable();</script>
     <% end %>  
   <tbody>
 </table>
