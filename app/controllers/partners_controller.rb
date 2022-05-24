@@ -4,6 +4,7 @@ class PartnersController < InheritedResources::Base
   # GET /partners or /partners.json
   def index
     @busqueda = Partner.ransack(params[:q])
+    @busqueda.sorts = ['name asc', 'created_at desc'] if @busqueda.sorts.empty?
     @partners = @busqueda.result(disctint: true)
     @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
     @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes']
