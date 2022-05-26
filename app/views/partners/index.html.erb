@@ -23,6 +23,10 @@
   <% end %>
 <br>
 
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @partners %>
+</nav>
+
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
@@ -64,7 +68,12 @@
         <td><%= partner.description.truncate(80) %></td>
         <td><%= link_to 'Mostrar', partner%> </td>     
       </tr>
+
     <script>$('#sortTable').DataTable();</script>
-    <% end %>  
+    <% end %>
   <tbody>
 </table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @partners %>
+</nav>

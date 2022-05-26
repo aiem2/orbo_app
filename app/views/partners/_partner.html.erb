@@ -1,59 +1,71 @@
 <div id="<%= dom_id partner %>">
-  <p>
-    <strong>Nombre Partner:</strong>
-    <%= partner.name %>
-  </p>
+  <div class="d-flex">
+    <div class ="container">
+      <br>
+      <p>
+        <strong>Nombre Partner:</strong>
+        <%= partner.name %>
+      </p>
+      
+      <p>
+        <strong>Orbo Área:</strong>
+        <%= partner.area %>
+      </p>
+      
+      <p>
+        <strong>Whatsapp:</strong>
+        <%= link_to "+#{partner.phone}", "https://wa.me/#{partner.phone}", :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= mail_to partner.email, partner.email%>
+      </p>
+
+      
+      <p>
+        <strong>Página web:</strong>
+        <%= link_to partner.web, partner.web, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Facebook:</strong>
+        <%= link_to partner.fb, partner.fb, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Instagram:</strong>
+        <%= link_to partner.ig, partner.ig, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Descripción:</strong>
+        <%= partner.description %>
+      </p>
+
+      <p>
+        <strong>Dirección:</strong>
+        <%= partner.address %>
+      </p>
+
+      <p>
+        <strong>Ciudad:</strong>
+        <%= partner.city %>
+      </p>
+
+      <p>
+        <strong>Región:</strong>
+        <%= partner.state %>
+      </p>
+
+    </div>
+    
+    <div class="container">
+      <%= image_tag partner.logo_url, :type => :upload%>
+    </div>
   
-  <p>
-    <strong>Orbo Área:</strong>
-    <%= partner.area %>
-  </p>
+  </div>
   
-  <p>
-    <strong>Whatsapp:</strong>
-    <%= link_to "+#{partner.phone}", "https://wa.me/#{partner.phone}", :target => :_blank %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= mail_to partner.email, partner.email%>
-  </p>
-
-  
-  <p>
-    <strong>Página web:</strong>
-    <%= link_to partner.web, partner.web, :target => :_blank %>
-  </p>
-
-  <p>
-    <strong>Facebook:</strong>
-    <%= link_to partner.fb, partner.fb, :target => :_blank %>
-  </p>
-
-  <p>
-    <strong>Instagram:</strong>
-    <%= link_to partner.ig, partner.ig, :target => :_blank %>
-  </p>
-
-  <p>
-    <strong>Descripción:</strong>
-    <%= partner.description %>
-  </p>
-
-  <p>
-    <strong>Dirección:</strong>
-    <%= partner.address %>
-  </p>
-
-  <p>
-    <strong>Ciudad:</strong>
-    <%= partner.city %>
-  </p>
-
-  <p>
-    <strong>Región:</strong>
-    <%= partner.state %>
-  </p>
 
   <% if current_user.admin? %>
     <br>

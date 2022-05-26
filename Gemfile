@@ -80,3 +80,4 @@ gem 'sass-rails'
 gem 'ransack'
 gem "ffi", "~> 1.15"
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
