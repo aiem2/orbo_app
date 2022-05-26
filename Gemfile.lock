@@ -85,6 +85,7 @@ GEM
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bulma (0.1.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -109,6 +110,7 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.10.0)
+    ffi (1.15.5-x64-mingw-ucrt)
     ffi (1.15.5-x64-mingw32)
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
@@ -177,9 +179,12 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.6-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.13.6-x64-mingw32)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.3.5-x64-mingw-ucrt)
     pg (1.3.5-x64-mingw32)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -230,6 +235,8 @@ GEM
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -281,11 +288,13 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  x64-mingw-ucrt
   x64-mingw32
 
 DEPENDENCIES
   activeadmin
   bootsnap
+  bulma
   capybara
   cocoon
   debug
@@ -308,7 +317,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.0.3p157
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.11

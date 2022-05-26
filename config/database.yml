@@ -16,16 +16,23 @@
 #
 default: &default
   adapter: postgresql
-  username: aiem2
-  password: vamospor2022
+  username: Fran
+  password: akatsuki5
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: orbo_app_development
+  development:
+  adapter: postgresql
+  encoding: unicode
+  database: orbo_app
+  pool: 5  
+  port: 5433
+  username: Fran
+  password: akatsuki5clear
+  reconnect: true
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +66,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: orbo_app_test
+  database: orbo_app
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

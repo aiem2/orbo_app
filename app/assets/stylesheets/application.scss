@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
- .navbar{
+
+ @import "bulma";
+
+
+.navbar{
     background-color: #005f63;
 }
 
@@ -37,7 +41,6 @@
     border: none;
 }
 
-
 #navbarDropdown{
     background-color: #640000;
     color: white;
@@ -45,4 +48,3 @@
     border-radius: 5px;
     border: none;
 }
-
