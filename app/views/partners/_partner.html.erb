@@ -26,7 +26,7 @@
       
       <p>
         <strong>Whatsapp:</strong>
-        <%= link_to "+#{partner.phone}", "https://wa.me/#{partner.phone}", :target => :_blank %>
+        <%= link_to "+#{partner.phone}", "https://api.whatsapp.com/send?phone=#{partner.phone}", :target => :_blank %>
       </p>
 
       <p>
@@ -88,7 +88,7 @@
 
     <p>
       <strong>Teléfono de contacto:</strong>
-      <%= link_to "+#{partner.liason_phone}", "https://wa.me/#{partner.liason_phone}", :target => :_blank %>
+      <%= link_to "+#{partner.liason_phone}", "https://api.whatsapp.com/send?phone=#{partner.liason_phone}", :target => :_blank %>
     </p>
 
     <p>
