@@ -24,3 +24,4 @@ module OrboApp
     config.i18n.fallbacks = true
   end
 end
+
