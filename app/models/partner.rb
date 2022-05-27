@@ -1,4 +1,3 @@
 class Partner < ApplicationRecord
-    paginates_per 20
-
+    paginates_per 15
 end
