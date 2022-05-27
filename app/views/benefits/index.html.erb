@@ -1,14 +1,61 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="titulo">Beneficios</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Beneficio', new_benefit_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
 
-<h1>Benefits</h1>
+<h5>Selecciona la información para buscar entre nuestros nuestros Beneficios:</h5>
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :area_eq, 'Area'%>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
 
-<div id="benefits">
-  <% @benefits.each do |benefit| %>
-    <%= render benefit %>
-    <p>
-      <%= link_to "Show this benefit", benefit %>
-    </p>
+    <%= f.label :región%>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', benefits_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos los Partners', benefits_path, class: "btn", id: "boton" %>
   <% end %>
-</div>
+<br>
 
-<%= link_to "New benefit", new_benefit_path %>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @benefits %>
+</nav>
+
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Partner</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de término</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @benefits.each do |benefit|%>
+    <tr>
+        <td><%= benefit.area %></td>
+        <td><%#= benefit.partner_name %></td>
+        <td><%= benefit.date_start %></td>
+        <td><%= benefit.date_end %></td>
+        <td><%= benefit.city %></td>
+        <td><%= benefit.state %></td>
+        <td><%= benefit.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', benefit%> </td>     
+      </tr>
+
+    <script>$('#sortTable').DataTable();</script>
+    <% end %>
+  <tbody>
+</table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @benefits %>
+</nav>

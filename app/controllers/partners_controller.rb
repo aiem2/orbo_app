@@ -7,7 +7,7 @@ class PartnersController < InheritedResources::Base
     @busqueda = Partner.ransack(params[:q])
     @busqueda.sorts = ['id asc', 'created_at desc'] if @busqueda.sorts.empty?
     @partners = @busqueda.result.page(params[:page])
-
+ 
     @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
     @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes']
   end
@@ -37,7 +37,7 @@ class PartnersController < InheritedResources::Base
 
     respond_to do |format|
       if @partner.save
-        format.html { redirect_to partner_url(@partner), notice: "Partner was successfully created." }
+        format.html { redirect_to partner_url(@partner), notice: "El Partner fue creado con éxito." }
         format.json { render :show, status: :created, location: @partner }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class PartnersController < InheritedResources::Base
   def update
     respond_to do |format|
       if @partner.update(partner_params)
-        format.html { redirect_to partner_url(@partner), notice: "Partner was successfully updated." }
+        format.html { redirect_to partner_url(@partner), notice: "El Partner fue actualizado con éxito." }
         format.json { render :show, status: :ok, location: @partner }
       else
         format.html { render :edit, status: :unprocessable_entity }
