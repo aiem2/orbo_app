@@ -32,7 +32,7 @@ class BenefitsController < InheritedResources::Base
 
     # POST /partners or /partners.json
     def create
-      @benefit = Benefit.new(benefits_params)
+      @benefit = Benefit.new(benefit_params)
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Los Lagos','Aysén', 'Magallanes']
 
@@ -50,7 +50,7 @@ class BenefitsController < InheritedResources::Base
     # PATCH/PUT /partners/1 or /partners/1.json
     def update
       respond_to do |format|
-        if @benefit.update(benefits_params)
+        if @benefit.update(benefit_params)
           format.html { redirect_to benefit_url(@benefit), notice: "El Beneficio fue actualizado con éxito." }
           format.json { render :show, status: :ok, location: @benefit }
         else
