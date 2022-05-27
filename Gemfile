@@ -81,3 +81,5 @@ gem 'ransack'
 gem "ffi", "~> 1.15"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'bulma'
+gem 'bulma-rails'

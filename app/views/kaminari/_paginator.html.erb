@@ -6,6 +6,8 @@
     remote:        data-remote
     paginator:     the paginator that renders the pagination tags inside
 -%>
+
+<h6 class="mt-2 mx-3">Paginas: </h6>
 <%= paginator.render do -%>
   <nav class="pagination" role="navigation" aria-label="pager">
     <%= first_page_tag unless current_page.first? %>
