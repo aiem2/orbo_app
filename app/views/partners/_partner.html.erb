@@ -1,6 +1,11 @@
 <div id="<%= dom_id partner %>">
   <div class="d-flex">
-    <div class ="container">
+    
+      <div class="container col-3"  >
+      <%= image_tag partner.logo_url, :type => :upload%>
+    </div>
+
+    <div class ="container col-5">
       <br>
       <p>
         <strong>Nombre Partner:</strong>
@@ -60,10 +65,9 @@
 
     </div>
     
-    <div class="container">
-      <%= image_tag partner.logo_url, :type => :upload%>
+    <div class="col-4">
+      <%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
     </div>
-  
   </div>
   
 

@@ -1,8 +1,6 @@
 <p style="color: green"><%= notice %></p>
-<%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
 <br>
-<br>
-<h3 class="titulo">Información del Partner</h3>
+<h3 class="titulo"><%= @partner.name %></h3>
 <%= render @partner %>
 
 <div>
@@ -12,6 +10,5 @@
     <br>
     <%= button_to "Eliminar Partner", @partner, method: :delete, class: "btn", id:"boton" %>
   <% end%>
-  <br>
 
 </div>

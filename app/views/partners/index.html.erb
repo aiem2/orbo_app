@@ -33,11 +33,6 @@
       <th scope="col">Logo</th>
       <th scope="col">Area</th>
       <th scope="col">Nombre Partner</th>
-      <th scope="col">Mail</th>
-      <th scope="col">Página web</th>
-      <th scope="col">Instagram</th>
-      <th scope="col">Facebook</th>
-      <th scope="col">Whatsapp</th>
       <th scope="col">Ciudad</th>
       <th scope="col">Región</th>
       <th scope="col">Descripción</th>
@@ -50,19 +45,6 @@
         <td><%= image_tag partner.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
         <td><%= partner.area %></td>
         <td><%= partner.name %></td>
-        <td><%= partner.email %></td>
-        <td><%if partner.web?%>
-            <%= link_to 'Página web', partner.web, target: :_blank %></td>
-            <%end%>
-        <td><%if partner.ig?%>
-            <%= link_to 'Instagram', partner.ig, target: :_blank %></td>
-            <%end%>
-        <td><%if partner.fb?%>
-            <%= link_to 'Facebook', partner.fb, target: :_blank %></td>
-            <%end%>
-        <td><%if partner.phone?%>
-            <%= link_to 'Whatsapp', "https://wa.me/#{partner.phone}", target: :_blank %></td>
-            <%end%>
         <td><%= partner.city %></td>
         <td><%= partner.state %></td>
         <td><%= partner.description.truncate(80) %></td>

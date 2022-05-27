@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'maps/show'
+  resources :maps
   resources :benefits
   resources :contents
   resources :ratings
