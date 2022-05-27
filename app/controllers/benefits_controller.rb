@@ -13,6 +13,9 @@ class BenefitsController < InheritedResources::Base
 
     end
 
+    def credential
+    end
+
     # GET /partners/1 or /partners/1.json
     def show
     end

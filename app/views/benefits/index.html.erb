@@ -3,7 +3,11 @@
 <% if current_user.admin? %>
   <%= link_to 'Nuevo Beneficio', new_benefit_path, class: "btn", id: "boton"%>
   <br>
+  <br>
 <% end %>
+
+<%= link_to 'Generar credencial de Beneficios', credential_path, class:"btn", id:"boton-a"%>
+<br>
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros nuestros Beneficios:</h5>
@@ -39,7 +43,6 @@
         <th scope="col">Modificar/Eliminar</th>
       <% end%>  
       <th scope="col">Información Partner</th>
-      <th scope="col">Generar credencial</th>
     </tr>
   </thead>
   <tbody>
@@ -56,8 +59,6 @@
           <td><%= link_to 'Mostrar', benefit%></td>
         <% end%>
         <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></td>
-        <td><a href="benefits/credential">Generar credencial</td>
-     
       </tr>
 
     <script>$('#sortTable').DataTable();</script>
