@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :maps
   resources :benefits
   resources :contents
   resources :ratings
   resources :prospects
   resources :partners
+  get 'maps/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # devise_for :users, controllers: {sessions: 'users/sessions'}
