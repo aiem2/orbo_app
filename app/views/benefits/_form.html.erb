@@ -1,7 +1,7 @@
 <%= form_with(model: benefit) do |form| %>
   <% if benefit.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(benefit.errors.count, "error") %> prohibited this benefit from being saved:</h2>
+      <h2><%= pluralize(benefit.errors.count, "errores") %> no permitieron que se registre este beneficio :</h2>
 
       <ul>
         <% benefit.errors.each do |error| %>
@@ -12,36 +12,41 @@
   <% end %>
 
   <div>
-    <%= form.label :date_start, style: "display: block" %>
+    <%= form.label :orbo_area, style: "display: block" %>
+    <%= form.select :area, @areas, :prompt => "Selecciones una opción:"%>
+  </div>
+
+  <div>
+    <%= form.label :fecha_inicio, style: "display: block" %>
     <%= form.date_field :date_start %>
   </div>
 
   <div>
-    <%= form.label :date_end, style: "display: block" %>
+    <%= form.label :fecha_término, style: "display: block" %>
     <%= form.date_field :date_end %>
   </div>
 
   <div>
-    <%= form.label :city, style: "display: block" %>
+    <%= form.label :ciudad, style: "display: block" %>
     <%= form.text_field :city %>
   </div>
 
   <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.text_field :state %>
+    <%= form.label :región, style: "display: block" %>
+    <%= form.select :state, @regiones, :prompt => "Selecciones una opción:"%>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :descripción, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
     <%= form.label :partner_id, style: "display: block" %>
-    <%= form.text_field :partner_id %>
+    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true  %>
   </div>
-
+  <br>
   <div>
-    <%= form.submit %>
+    <%= form.submit "Registrar beneficio", class:"btn", id:"boton" %>
   </div>
 <% end %>

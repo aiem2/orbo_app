@@ -3,8 +3,9 @@
 <%= render @benefit %>
 
 <div>
-  <%= link_to "Edit this benefit", edit_benefit_path(@benefit) %> |
-  <%= link_to "Back to benefits", benefits_path %>
-
-  <%= button_to "Destroy this benefit", @benefit, method: :delete %>
+  <%= link_to "Editar el beneficio", edit_benefit_path(@benefit) %> |
+  <%= link_to "Volver a beneficios", benefits_path %>
+  <br>
+  <br>
+  <%= button_to "Eliminar beneficio", @benefit, method: :delete, class:"btn", id:"boton" %>
 </div>

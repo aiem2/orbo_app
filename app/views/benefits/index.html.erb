@@ -17,7 +17,7 @@
     <%= f.submit value='Buscar', class: "btn", id: "boton"%>
   
     <%=link_to 'Nueva búsqueda', benefits_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Partners', benefits_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos los Beneficios', benefits_path, class: "btn", id: "boton" %>
   <% end %>
 <br>
 
@@ -35,7 +35,11 @@
       <th scope="col">Ciudad</th>
       <th scope="col">Región</th>
       <th scope="col">Descripción</th>
-      <th scope="col">Más detalles</th>
+      <% if current_user.admin?%>
+        <th scope="col">Modificar/Eliminar</th>
+      <% end%>  
+      <th scope="col">Información Partner</th>
+      <th scope="col">Generar credencial</th>
     </tr>
   </thead>
   <tbody>
@@ -48,7 +52,12 @@
         <td><%= benefit.city %></td>
         <td><%= benefit.state %></td>
         <td><%= benefit.description.truncate(80) %></td>
-        <td><%= link_to 'Mostrar', benefit%> </td>     
+        <% if current_user.admin?%>
+          <td><%= link_to 'Mostrar', benefit%></td>
+        <% end%>
+        <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></td>
+        <td><a href="benefits/credential">Generar credencial</td>
+     
       </tr>
 
     <script>$('#sortTable').DataTable();</script>
