@@ -2,9 +2,13 @@
 
 <%= render @prospect %>
 
+<% if current_user.admin?%>
 <div>
   <%= link_to "Edit this prospect", edit_prospect_path(@prospect) %> |
   <%= link_to "Back to prospects", prospects_path %>
 
   <%= button_to "Destroy this prospect", @prospect, method: :delete %>
 </div>
+<% end%>
+
+<%= link_to 'Volver al inicio', root_path , class:"btn", id:"boton"%>

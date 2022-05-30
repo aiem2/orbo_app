@@ -1,9 +1,14 @@
-<h1>New prospect</h1>
+<h1 class="titulo">Quiero ser un Orbo Partner</h1>
 
 <%= render "form", prospect: @prospect %>
 
 <br>
 
 <div>
-  <%= link_to "Back to prospects", prospects_path %>
+  <% if current_user.admin?%>
+    <%= link_to "Volver a prospectos", prospects_path, class:"btn", id:"boton" %>
+    <br>
+  <% end %>
+  
+  <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
 </div>
