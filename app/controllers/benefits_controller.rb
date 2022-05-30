@@ -5,7 +5,7 @@ class BenefitsController < InheritedResources::Base
     # GET /partners or /partners.json
     def index
       @busqueda = Benefit.ransack(params[:q])
-      @busqueda.sorts = ['id asc', 'created_at desc'] if @busqueda.sorts.empty?
+      @busqueda.sorts = ['date_end desc'] if @busqueda.sorts.empty?
       @benefits = @busqueda.result.page(params[:page])
    
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
