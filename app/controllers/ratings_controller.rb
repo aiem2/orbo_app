@@ -5,7 +5,7 @@ class RatingsController < InheritedResources::Base
     # GET /partners or /partners.json
     def index
       @busqueda = Rating.ransack(params[:q])
-      @busqueda.sorts = ['date_end desc'] if @busqueda.sorts.empty?
+      @busqueda.sorts = ['id desc'] if @busqueda.sorts.empty?
       @ratings = @busqueda.result.page(params[:page])
     end
 

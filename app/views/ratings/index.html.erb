@@ -1,14 +1,52 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="titulo">Evaluaciones de nuestros usuarios:</h1>
 
-<h1>Ratings</h1>
+<br>
+<h5>Selecciona a nuestro Partner para ver las evaluaciones de nuestros usuarios:</h5>
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :partner_name_cont, 'Nombre del Partner'%>
+    <%= f.text_field :partner_name_cont %>
 
-<div id="ratings">
-  <% @ratings.each do |rating| %>
-    <%= render rating %>
-    <p>
-      <%= link_to "Show this rating", rating %>
-    </p>
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <%=link_to 'Nueva búsqueda', ratings_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos las evaluaciones', ratings_path, class: "btn", id: "boton" %>
   <% end %>
-</div>
+<br>
 
-<%= link_to "New rating", new_rating_path %>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>
+
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Partner</th>
+      <th scope="col">Fecha Servicio</th>
+      <th scope="col">Tipo de Servicio</th>
+      <th scope="col">Nota</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Ver detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating|%>
+    <tr>
+        <td><%= rating.id %></td>
+        <td><%= rating.user_name %></td>
+        <td><%= rating.partner_name %></td>
+        <td><%= rating.date_service.strftime("%d-%m-%Y") %></td>
+        <td><%= rating.type_service %></td>
+        <td><%= rating.rate %></td>
+        <td><%= rating.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', rating%> </td>     
+      </tr>
+
+    <script>$('#sortTable').DataTable();</script>
+    <% end %>
+  <tbody>
+</table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>

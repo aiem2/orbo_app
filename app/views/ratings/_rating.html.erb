@@ -1,27 +1,42 @@
 <div id="<%= dom_id rating %>">
   <p>
-    <strong>Date service:</strong>
-    <%= rating.date_service %>
-  </p>
-
-  <p>
-    <strong>Type service:</strong>
-    <%= rating.type_service %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= rating.description %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
+    <strong>User id:</strong>
     <%= rating.user_id %>
   </p>
 
   <p>
-    <strong>Partner:</strong>
+    <strong>User:</strong>
+    <%= rating.user_name %>
+  </p>
+
+  <p>
+    <strong>Partner id:</strong>
     <%= rating.partner_id %>
+  </p>
+  
+  <p>
+    <strong>Partner:</strong>
+    <%= rating.partner_name %>
+  </p>
+  
+  <p>
+    <strong>Fecha Servicio:</strong>
+    <%= rating.date_service.strftime("%d-%m-%Y") %>
+  </p>
+
+  <p>
+    <strong>Tipo Servicio:</strong>
+    <%= rating.type_service %>
+  </p>
+
+  <p>
+    <strong>Nota:</strong>
+    <%= rating.rate %>
+  </p>
+  
+  <p>
+    <strong>Comentarios:</strong>
+    <%= rating.description %>
   </p>
 
 </div>

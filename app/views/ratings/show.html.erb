@@ -1,10 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @rating %>
 
 <div>
-  <%= link_to "Edit this rating", edit_rating_path(@rating) %> |
-  <%= link_to "Back to ratings", ratings_path %>
-
-  <%= button_to "Destroy this rating", @rating, method: :delete %>
+  <%= link_to "Modificar esta evaluación", edit_rating_path(@rating) %> |
+  <%= link_to "Listado de evaluaciones", ratings_path %>
+  <br>
+  <br>
+  <%= button_to "Eliminar esta evaluación", @rating, method: :delete, class:"btn", id:"boton" %>
 </div>
