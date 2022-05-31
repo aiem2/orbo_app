@@ -39,6 +39,7 @@ class ProspectsController < InheritedResources::Base
       @prospect = Prospect.new(prospect_params)
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Los Lagos','Aysén', 'Magallanes', 'Nacional']
+      @status =['Inscripción', 'Revisión', 'Contacto','Aceptada', 'Rechazada']
 
       respond_to do |format|
         if @prospect.save
@@ -75,7 +76,7 @@ class ProspectsController < InheritedResources::Base
       end
     end
 
-  private
+  private 
     def set_prospect
       @prospect = Prospect.find(params[:id])
     end

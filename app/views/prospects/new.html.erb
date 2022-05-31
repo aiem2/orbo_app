@@ -8,7 +8,9 @@
   <% if current_user.admin?%>
     <%= link_to "Volver a prospectos", prospects_path, class:"btn", id:"boton" %>
     <br>
+    <% else %>
+    <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
   <% end %>
   
-  <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
+  
 </div>
