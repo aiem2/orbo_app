@@ -31,7 +31,7 @@ class ContentsController < InheritedResources::Base
 
   # POST /partners or /partners.json
   def create
-    @content = Content.new(partner_params)
+    @content = Content.new(content_params)
     @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
     @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Los Lagos','Aysén', 'Magallanes', 'Nacional']
 

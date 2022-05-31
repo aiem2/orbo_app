@@ -49,14 +49,14 @@
         <% if current_user.admin? %>
           <td><%= content.id %></td>
         <% end %>
-        <td><%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><%= image_tag content.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
         <td><%= content.title %></td>
-        <td><%= prospect.area %></td>
-        <td><%= prospect.city %></td>
-        <td><%= prospect.state %></td>
-        <td><%= prospect.description.truncate(80) %></td>
-        <td><%= link_to 'Mostrar', prospect%></td> 
-        <td>Irá el vínculo de descarga</td>     
+        <td><%= content.area %></td>
+        <td><%= content.city %></td>
+        <td><%= content.state %></td>
+        <td><%= content.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', content%></td> 
+        <td><%= link_to 'Descargar', content.download, :target => :_blank %></td>     
       </tr>
 
     <script>$('#sortTable').DataTable();</script>
