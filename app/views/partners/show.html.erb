@@ -15,7 +15,7 @@
 <h3 class="titulo"> Evaluaciones de otros usuarios:</h3>
 <strong> Evaluaciones: </strong><%= @rates %>
 <br>
-<strong> Nota promedio: </strong><%= @average %>
+<strong> Nota promedio: </strong><%= @average.round(1) %>
 <br>
 <% @ratings.each do |rating|%>
     <br>
