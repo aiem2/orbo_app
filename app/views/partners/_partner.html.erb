@@ -69,23 +69,7 @@
         <strong>Región:</strong>
         <%= partner.state %>
       </p>
-
-    </div>
-    
-    <div class="col-4">
-      <%= link_to "Evaluar Partner", new_rating_path(partner_id: @partner), class:"btn", id: "boton" %>
-      <br>
-      <br>
-      <%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
-      <br>
-      <br>
-      <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
-    </div>
-    
-  </div>
-  
-
-  <% if current_user.admin? %>
+      <% if current_user.admin? %>
     <br>
     <h3>Información de uso interno:</h3>
     <p>
@@ -103,7 +87,28 @@
       <%= mail_to partner.liason_mail, partner.liason_mail%>
     </p>
 
+    <%= link_to "Editar Partner", edit_partner_path(@partner), class:"btn", id:"boton" %>
+    <br>
+    <br>
+    <%= button_to "Eliminar Partner", @partner, method: :delete, class: "btn", id:"boton" %>
+    <br>
+    <br>
+
   <% end %>
 
+
+    </div>
+    
+    <div class="col-4">
+      <%= link_to "Evaluar Partner", new_rating_path(partner_id: @partner), class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
+    </div>
+    
+  </div>
 
 </div> 

@@ -1,6 +1,7 @@
 class Rating < ApplicationRecord
   belongs_to :user
   belongs_to :partner
+  
   paginates_per 15
   validates :user_id, presence: true
   validates :partner_id, presence: true

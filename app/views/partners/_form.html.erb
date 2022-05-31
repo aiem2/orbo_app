@@ -71,25 +71,27 @@
     <%= form.select :state, @regiones, :prompt => 'Seleccione una Región' %>
   </div>
 
-  <% if current_user.admin? %>
-    <br>
-    <h3>Información de uso interno:</h3>
-    <div>
-      <%= form.label :nombre_contacto, style: "display: block" %>
-      <%= form.text_field :liason_name %>
-    </div>
+  <div>
+    <% if current_user.admin? %>
+      <br>
+      <h3>Información de uso interno:</h3>
+      <div>
+        <%= form.label :nombre_contacto, style: "display: block" %>
+        <%= form.text_field :liason_name %>
+      </div>
 
-    <div>
-      <%= form.label :teléfono_contacto, style: "display: block" %>
-      <%= form.text_field :liason_phone %>
-    </div>
+      <div>
+        <%= form.label :teléfono_contacto, style: "display: block" %>
+        <%= form.text_field :liason_phone %>
+      </div>
 
-    <div>
-      <%= form.label :mail_contacto, style: "display: block" %>
-      <%= form.text_field :liason_mail %>
-    </div>
+      <div>
+        <%= form.label :mail_contacto, style: "display: block" %>
+        <%= form.text_field :liason_mail %>
+      </div>
 
-  <% end %>
+      <% end %>
+    </div>
   <br>
   <div>
     <%= form.submit "Crear o actualizar este Partner", class:"btn", id:"boton" %>

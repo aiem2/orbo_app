@@ -1,4 +1,6 @@
 class Partner < ApplicationRecord
+    has_many :ratings
+    
     paginates_per 15
     validates :name, presence: true
     validates :email, presence: true
