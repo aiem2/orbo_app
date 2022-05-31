@@ -1,14 +1,69 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="titulo">Contenido descargable</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Contenido descargable', new_content_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+<h5>Selecciona la información para buscar entre nuestros Contenidos descargables:</h5>
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :title_cont, 'Nombre del Contenido'%>
+    <%= f.text_field :title_cont %>
 
-<h1>Contents</h1>
+    <%= f.label :area_eq, 'Area'%>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
 
-<div id="contents">
-  <% @contents.each do |content| %>
-    <%= render content %>
-    <p>
-      <%= link_to "Show this content", content %>
-    </p>
+    <%= f.label :región%>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', contents_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos los Prospectos', contents_path, class: "btn", id: "boton" %>
   <% end %>
-</div>
+<br>
 
-<%= link_to "New content", new_content_path %>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @contents %>
+</nav>
+
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <% if current_user.admin?%>
+        <th scope="col">Id</th>
+      <% end %>
+      <th scope="col">Portada</th>
+      <th scope="col">Título</th>
+      <th scope="col">Area</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+      <th scope="col">Descargar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contents.each do |content|%>
+    <tr>
+        <% if current_user.admin? %>
+          <td><%= content.id %></td>
+        <% end %>
+        <td><%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><%= content.title %></td>
+        <td><%= prospect.area %></td>
+        <td><%= prospect.city %></td>
+        <td><%= prospect.state %></td>
+        <td><%= prospect.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', prospect%></td> 
+        <td>Irá el vínculo de descarga</td>     
+      </tr>
+
+    <script>$('#sortTable').DataTable();</script>
+    <% end %>
+  <tbody>
+</table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @contents %>
+</nav>

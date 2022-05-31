@@ -4,11 +4,10 @@
 
 <% if current_user.admin?%>
 <div>
-  <%= link_to "Edit this prospect", edit_prospect_path(@prospect) %> |
-  <%= link_to "Back to prospects", prospects_path %>
-
-  <%= button_to "Destroy this prospect", @prospect, method: :delete %>
+  <%= link_to "Actualizar prospecto", edit_prospect_path(@prospect) %> |
+  <%= link_to "Listado de prospectos", prospects_path %>
+  <br>
+  <br>
+  <%= button_to "Eliminar prospecto", @prospect, method: :delete, class:"btn", id:"boton" %>
 </div>
 <% end%>
-
-<%= link_to 'Volver al inicio', root_path , class:"btn", id:"boton"%>

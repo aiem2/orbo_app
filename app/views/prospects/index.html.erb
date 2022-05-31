@@ -1,14 +1,68 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="titulo">Prospecto de Partners</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Prospecto', new_prospect_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+<h5>Selecciona la información para buscar entre nuestros Prospectos de Partners:</h5>
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :name_cont, 'Nombre del Prospecto'%>
+    <%= f.text_field :name_cont %>
 
-<h1>Prospects</h1>
+    <%= f.label :area_eq, 'Area'%>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
 
-<div id="prospects">
-  <% @prospects.each do |prospect| %>
-    <%= render prospect %>
-    <p>
-      <%= link_to "Show this prospect", prospect %>
-    </p>
+    <%= f.label :región%>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+
+    <%= f.label :status%>
+    <%= f.select :status_eq, options_for_select(@status), include_blank: true %>
+
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', prospects_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos los Prospectos', prospects_path, class: "btn", id: "boton" %>
   <% end %>
-</div>
+<br>
 
-<%= link_to "New prospect", new_prospect_path %>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>
+
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Status</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Prospecto</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prospects.each do |prospect|%>
+    <tr>
+        <td><%= prospect.id %></td>
+        <td><%= prospect.status %></td>
+        <td><%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><%= prospect.area %></td>
+        <td><%= prospect.name %></td>
+        <td><%= prospect.city %></td>
+        <td><%= prospect.state %></td>
+        <td><%= prospect.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', prospect%> </td>     
+      </tr>
+
+    <script>$('#sortTable').DataTable();</script>
+    <% end %>
+  <tbody>
+</table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>

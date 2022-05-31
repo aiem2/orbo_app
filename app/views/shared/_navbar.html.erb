@@ -30,12 +30,18 @@
           <li class="nav-item mt-2 mx-3">
             <%=link_to 'Contenido descargable', contents_path, style: "color:white; text-decoration:none"%>
           </li>
-          
+
         </ul>
         <ul>
-          <li class="nav-item mt-4 mx-3 fst-italic fw-light">
-            <%=link_to 'Inscribirme como Partner', new_prospect_path, style: "color:white; text-decoration:none"%>
-          </li>
+          <% if current_user.admin?%>
+            <li class="nav-item mt-4 mx-3 fst-italic fw-light">
+              <%=link_to 'Prospecto de Partners', prospects_path, style: "color:white; text-decoration:none"%>
+            </li>
+          <% else %>
+            <li class="nav-item mt-4 mx-3 fst-italic fw-light">
+              <%=link_to 'Inscribirme como Partner', new_prospect_path, style: "color:white; text-decoration:none"%>
+            </li>
+          <% end %>
         </ul>
       
         <div class="nav-item dropdown">
