@@ -1,6 +1,7 @@
 <h1 class="titulo">Beneficios</h1>
-<br>
+
 <% if current_user.admin? %>
+  <br>
   <%= link_to 'Nuevo Beneficio', new_benefit_path, class: "btn", id: "boton"%>
   <br>
   <br>

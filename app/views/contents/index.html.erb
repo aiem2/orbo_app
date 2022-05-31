@@ -1,6 +1,7 @@
 <h1 class="titulo">Contenido descargable</h1>
-<br>
+
 <% if current_user.admin? %>
+  <br>
   <%= link_to 'Nuevo Contenido descargable', new_content_path, class: "btn", id: "boton"%>
   <br>
 <% end %>

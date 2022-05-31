@@ -1,6 +1,7 @@
 <h1 class="titulo">Partners</h1>
-<br>
+
 <% if current_user.admin? %>
+  <br>
   <%= link_to 'Nuevo Partner', new_partner_path, class: "btn", id: "boton"%>
   <br>
 <% end %>

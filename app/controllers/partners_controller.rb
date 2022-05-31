@@ -14,6 +14,10 @@ class PartnersController < InheritedResources::Base
 
   # GET /partners/1 or /partners/1.json
   def show
+    @ratings = Rating.where(:partner_id => @partner)
+    user_name = @user_name
+    @rates = Rating.where(:partner_id => @partner).count
+    @average = @ratings.average(:rate)
   end
 
   # GET /partners/new

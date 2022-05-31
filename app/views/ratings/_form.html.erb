@@ -1,7 +1,7 @@
 <%= form_with(model: rating) do |form| %>
   <% if rating.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+      <h2><%= pluralize(rating.errors.count, "error") %> no permitieron registrar tu evaluación:</h2>
 
       <ul>
         <% rating.errors.each do |error| %>
@@ -12,31 +12,37 @@
   <% end %>
 
   <div>
-    <%= form.label :date_service, style: "display: block" %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+
+  <div>
+    <%= form.label :partner_id, style: "display: block" %>
+    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true  %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_del_servicio, style: "display: block" %>
     <%= form.date_field :date_service %>
   </div>
 
   <div>
-    <%= form.label :type_service, style: "display: block" %>
+    <%= form.label :tipo_de_servicio, style: "display: block" %>
     <%= form.text_field :type_service %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
+    <%= form.label :descripción, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :nota_1_al_10, style: "display: block" %>
+    <%= form.number_field :rate %>
   </div>
-
+  <br>
   <div>
-    <%= form.label :partner_id, style: "display: block" %>
-    <%= form.text_field :partner_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Generar mi evaluación", class:"btn", id:"boton"%>
   </div>
 <% end %>
+

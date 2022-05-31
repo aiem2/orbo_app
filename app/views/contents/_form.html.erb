@@ -1,7 +1,7 @@
 <%= form_with(model: content) do |form| %>
   <% if content.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(content.errors.count, "error") %> no permitieron el registro de este contenido:</h2>
+      <h2><%= pluralize(content.errors.count, "error") %> no permitieron el registro de este Contenido:</h2>
 
       <ul>
         <% content.errors.each do |error| %>
