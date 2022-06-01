@@ -9,6 +9,52 @@
       <%= link_to "Show this rating", rating %>
     </p>
   <% end %>
+<<<<<<< Updated upstream
 </div>
 
 <%= link_to "New rating", new_rating_path %>
+=======
+<br>
+<strong>Cantidad de evaluaciones: </strong> <%= @ratings_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Partner</th>
+      <th scope="col">Fecha Servicio</th>
+      <th scope="col">Tipo de Servicio</th>
+      <th scope="col">Segmento</th>
+      <th scope="col">Nota</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Ver detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating|%>
+    <tr>
+        <td><%= rating.id %></td>
+        <td><%= rating.user_name %></td>
+        <td><%= rating.partner_name %></td>
+        <td><%= rating.date_service.strftime("%d-%m-%Y") %></td>
+        <td><%= rating.type_service %></td>
+        <td><%= rating.segment %></td>
+        <td><%= rating.rate %></td>
+        <td><%= rating.description.truncate(80) %></td>
+        <td><button><%= link_to 'Mostrar', rating%> </button></td>     
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>
+>>>>>>> Stashed changes

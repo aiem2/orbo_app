@@ -9,6 +9,57 @@
       <%= link_to "Show this prospect", prospect %>
     </p>
   <% end %>
+<<<<<<< Updated upstream
 </div>
 
 <%= link_to "New prospect", new_prospect_path %>
+=======
+<br>
+<strong>Cantidad de prospectos: </strong> <%= @prospects_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Status</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Prospecto</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prospects.each do |prospect|%>
+    <tr>
+        <td><%= prospect.id %></td>
+        <td><%= prospect.status %></td>
+        <td><% if prospect.logo.attached?%>
+            <%= image_tag prospect.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %>
+        </td>
+        <td><%= prospect.area %></td>
+        <td><%= prospect.name %></td>
+        <td><%= prospect.city %></td>
+        <td><%= prospect.state %></td>
+        <td><%= prospect.description.truncate(80) %></td>
+        <td><button><%= link_to 'Mostrar', prospect%></button> </td>     
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+<div>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>
+>>>>>>> Stashed changes

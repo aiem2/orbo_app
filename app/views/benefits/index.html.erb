@@ -9,6 +9,60 @@
       <%= link_to "Show this benefit", benefit %>
     </p>
   <% end %>
+<<<<<<< Updated upstream
 </div>
 
 <%= link_to "New benefit", new_benefit_path %>
+=======
+<br>
+<strong>Cantidad de beneficios: </strong> <%= @benefits_total%>
+<br>
+<br>
+
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @benefits %>
+</nav>
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <%# <th scope="col">Logo</th> %>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Partner</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de término</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <% if current_user.admin?%>
+        <th scope="col">Modificar/Eliminar</th>
+      <% end%>  
+      <th scope="col">Información Partner</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @benefits.each do |benefit|%>
+    <tr>
+        <%# <td>= image_tag benefit.partner_logo, :type => :upload, :width => 50, :height => 50, :crop => :fill</td> %>
+        <td><%= benefit.area %></td>
+
+        <td><%= benefit.partner_name %></td>
+        <td><%= benefit.date_start %></td>
+        <td><%= benefit.date_end %></td>
+        <td><%= benefit.city %></td>
+        <td><%= benefit.state %></td>
+        <td><%= benefit.description.truncate(80) %></td>
+        <% if current_user.admin?%>
+          <td><button><%= link_to 'Mostrar', benefit%></button></td>
+        <% end%>
+        <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></td>
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @benefits %>
+</nav>
+>>>>>>> Stashed changes

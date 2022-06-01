@@ -1,0 +1,29 @@
+                         List of relations
+ Schema |                 Name                  |   Type   | Owner 
+--------+---------------------------------------+----------+-------
+ public | active_admin_comments                 | table    | fran
+ public | active_admin_comments_id_seq          | sequence | fran
+ public | active_storage_attachments            | table    | fran
+ public | active_storage_attachments_id_seq     | sequence | fran
+ public | active_storage_blobs                  | table    | fran
+ public | active_storage_blobs_id_seq           | sequence | fran
+ public | active_storage_variant_records        | table    | fran
+ public | active_storage_variant_records_id_seq | sequence | fran
+ public | admin_users                           | table    | fran
+ public | admin_users_id_seq                    | sequence | fran
+ public | ar_internal_metadata                  | table    | fran
+ public | benefits                              | table    | fran
+ public | benefits_id_seq                       | sequence | fran
+ public | contents                              | table    | fran
+ public | contents_id_seq                       | sequence | fran
+ public | partners                              | table    | fran
+ public | partners_id_seq                       | sequence | fran
+ public | prospects                             | table    | fran
+ public | prospects_id_seq                      | sequence | fran
+ public | ratings                               | table    | fran
+ public | ratings_id_seq                        | sequence | fran
+ public | schema_migrations                     | table    | fran
+ public | users                                 | table    | fran
+ public | users_id_seq                          | sequence | fran
+(24 rows)
+

@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< Updated upstream
+=======
+@import "bulma";
+
+>>>>>>> Stashed changes
  .navbar{
     background-color: #005f63;
 }
@@ -46,3 +51,28 @@
     border: none;
 }
 
+<<<<<<< Updated upstream
+=======
+.pagination a{
+    color: white;
+}
+
+iframe {
+    margin: 0 auto;
+    display: block;
+}
+td button{
+    border: none;
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: #640000;
+    color: #c26e08;
+}
+
+td,
+th {
+    padding: 14px 20px;
+    text-overflow: auto;
+    overflow: auto;
+}
+>>>>>>> Stashed changes
