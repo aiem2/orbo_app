@@ -15,6 +15,7 @@
  */
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 @import "bulma";
 
@@ -24,12 +25,22 @@
 
 >>>>>>> Stashed changes
  .navbar{
+=======
+ @import 'bulma';
+ 
+.navbar{
+>>>>>>> Stashed changes
     background-color: #005f63;
 }
 
 .titulo{
     color: #640000;
     font: weight 600px;
+}
+
+.card {
+    color: #640000;
+    border: 5px solid #640000;
 }
 
 #boton{
@@ -75,6 +86,7 @@ iframe {
     display: block;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 td button{
     border: none;
     padding: 7px 20px;
@@ -105,5 +117,19 @@ th {
 =======
 .table-responsive{
     overflow-y:hidden
+}
+>>>>>>> Stashed changes
+=======
+td button{
+    background-color: #640000;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+td button:active, td button:hover {
+    background-color: #c26e08;
+    color: white;
 }
 >>>>>>> Stashed changes

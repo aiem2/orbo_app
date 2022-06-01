@@ -5,7 +5,13 @@
   <br>
 <% end %>
 <br>
+<<<<<<< Updated upstream
 <h5>Selecciona tu Región para buscar nuestros Partners:</h5>
+=======
+
+<h5>Selecciona la información para buscar entre nuestros nuestros Partners:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
+>>>>>>> Stashed changes
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Partner'%>
     <%= f.text_field :name_cont %>
@@ -21,6 +27,7 @@
     <%=link_to 'Nueva búsqueda', partners_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Partners', partners_path, class: "btn", id: "boton" %>
   <% end %>
+  </div>
 <br>
 
 <nav class="navbar text-white justify-content-center">
@@ -66,7 +73,11 @@
         <td><%= partner.city %></td>
         <td><%= partner.state %></td>
         <td><%= partner.description.truncate(80) %></td>
+<<<<<<< Updated upstream
         <td><button><%= link_to 'Mostrar', partner%> </button></td>     
+=======
+        <td><button> <%= link_to 'Mostrar', partner%></button> </td>     
+>>>>>>> Stashed changes
       </tr>
 
     <script>$('#sortTable').DataTable();</script>

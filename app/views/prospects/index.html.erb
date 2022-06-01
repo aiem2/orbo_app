@@ -1,4 +1,25 @@
+<<<<<<< Updated upstream
 <p style="color: green"><%= notice %></p>
+=======
+<h1 class="titulo">Prospecto de Partners</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Prospecto', new_prospect_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+<h5>Selecciona la información para buscar entre nuestros Prospectos de Partners:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :name_cont, 'Nombre del Prospecto'%>
+    <%= f.text_field :name_cont %>
+
+    <%= f.label :area_eq, 'Area'%>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
+
+    <%= f.label :región%>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+>>>>>>> Stashed changes
 
 <h1>Prospects</h1>
 
@@ -10,10 +31,14 @@
     </p>
   <% end %>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 </div>
 
 <%= link_to "New prospect", new_prospect_path %>
 =======
+=======
+  </div>
+>>>>>>> Stashed changes
 <br>
 <strong>Cantidad de prospectos: </strong> <%= @prospects_total%>
 <br>
