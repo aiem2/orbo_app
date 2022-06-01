@@ -10,4 +10,5 @@ class Partner < ApplicationRecord
     validates :state, presence: true
     validates :liason_name, presence: true
     validates :liason_mail, presence: true
+    validates :liason_mail, email: true
 end

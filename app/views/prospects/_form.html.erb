@@ -80,7 +80,9 @@
     <%= form.label :mail_responsable, style: "display: block" %>
     <%= form.text_field :liason_mail %>
   </div>
-  
+    
+    
+  <% if current_user.admin?%>
   <div>
     <%= form.label :estatus, style: "display: block" %>
     <%= form.select :status, @status, :prompt => 'Seleccione un Estatus' %>
@@ -90,7 +92,7 @@
     <%= form.label :Comentarios_internos, style: "display: block" %>
     <%= form.text_field :comments %>
   </div>
-
+  <% end %>
   <div>
     <br>
     <%= form.submit "Registrar la inscripción", class:"btn", id:"boton"%>

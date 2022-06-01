@@ -8,4 +8,4 @@ User.create(email: "cyatha@gmail.com", password: "akatsuki5", name: "Francisca R
 User.create(email: "camus.pascale@gmail.com", password: "nicabb2020", name: "Pascale Camus", nick_name: "Paski", phone: "56942686864", city:"Santiago", state: "Metropolitana", dob: "1989-10-31", gender: "Femenino", admin: true)
 
 #Tester
-User.create(email: "prueba@ejemplo.cl", password: "tester1", name: "Tester Tester", nick_name: "Tester", phone: "56911223344", city:"Santiago", state: "Región Metropolitana", dob: "1990-01-01", gender: "Masculino", admin: false)
+User.create(email: "prueba@ejemplo.cl", password: "tester1", name: "Tester Tester", nick_name: "Tester", phone: "56911223344", city:"Santiago", state: "Metropolitana", dob: "1990-01-01", gender: "Masculino", admin: false)
