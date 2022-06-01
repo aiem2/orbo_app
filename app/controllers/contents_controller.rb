@@ -10,6 +10,7 @@ class ContentsController < InheritedResources::Base
  
     @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
     @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes', 'Nacional']
+    @contents_total = Content.all.count
   end
 
   # GET /partners/1 or /partners/1.json

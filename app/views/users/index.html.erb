@@ -15,7 +15,9 @@
     <%=link_to 'Todos los Partners', users_path, class: "btn", id: "boton" %>
   <% end %>
 <br>
-
+<strong>Cantidad de usuarios: </strong> <%= @users_total%>
+<br>
+<br>
 <nav class="navbar text-white justify-content-center">
     <%= paginate @users %>
 </nav>

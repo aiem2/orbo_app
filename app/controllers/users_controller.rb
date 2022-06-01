@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       @busqueda.sorts = ['id asc'] if @busqueda.sorts.empty?
       @users = @busqueda.result.page(params[:page])
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes', 'Nacional']
+      @users_total = User.all.count
     end
   
     private

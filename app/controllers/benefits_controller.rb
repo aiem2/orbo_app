@@ -10,7 +10,7 @@ class BenefitsController < InheritedResources::Base
    
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes', 'Nacional']
-
+      @benefits_total = Benefit.all.count
     end
 
     def credential

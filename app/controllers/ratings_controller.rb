@@ -7,6 +7,7 @@ class RatingsController < InheritedResources::Base
       @busqueda = Rating.ransack(params[:q])
       @busqueda.sorts = ['id desc'] if @busqueda.sorts.empty?
       @ratings = @busqueda.result.page(params[:page])
+      @ratings_total = Rating.all.count
     end
 
     # GET /partners/1 or /partners/1.json

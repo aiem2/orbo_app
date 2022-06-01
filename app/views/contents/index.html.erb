@@ -6,6 +6,7 @@
   <br>
 <% end %>
 <br>
+
 <h5>Selecciona la información para buscar entre nuestros Contenidos descargables:</h5>
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :title_cont, 'Nombre del Contenido'%>
@@ -22,6 +23,9 @@
     <%=link_to 'Nueva búsqueda', contents_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Prospectos', contents_path, class: "btn", id: "boton" %>
   <% end %>
+<br>
+<strong>Cantidad de Contenidos descargables: </strong> <%= @contents_total%>
+<br>
 <br>
 
 <nav class="navbar text-white justify-content-center">

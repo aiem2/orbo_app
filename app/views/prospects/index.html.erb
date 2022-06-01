@@ -25,6 +25,9 @@
     <%=link_to 'Todos los Prospectos', prospects_path, class: "btn", id: "boton" %>
   <% end %>
 <br>
+<strong>Cantidad de prospectos: </strong> <%= @prospects_total%>
+<br>
+<br>
 
 <nav class="navbar text-white justify-content-center">
     <%= paginate @prospects %>

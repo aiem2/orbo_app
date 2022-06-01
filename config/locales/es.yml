@@ -153,6 +153,9 @@ es:
       wrong_length:
         one: no tiene la longitud correcta (1 carácter exactos)
         other: no tiene la longitud correcta (%{count} caracteres exactos)
+      not_found: No encontramos su cuenta
+      not_saved: Su email no se encuentra registrado en nuestra base de datos
+
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
       header:
@@ -297,3 +300,4 @@ es:
       not_saved:
         one: "Ha ocurrido 1 error:"
         other: "Han ocurrido %{count} errores:"
+        

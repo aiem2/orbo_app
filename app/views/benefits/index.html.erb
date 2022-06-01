@@ -25,6 +25,10 @@
     <%=link_to 'Todos los Beneficios', benefits_path, class: "btn", id: "boton" %>
   <% end %>
 <br>
+<strong>Cantidad de beneficios: </strong> <%= @benefits_total%>
+<br>
+<br>
+
 
 <nav class="navbar text-white justify-content-center">
     <%= paginate @benefits %>

@@ -11,6 +11,7 @@ class ProspectsController < InheritedResources::Base
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes', 'Nacional']
       @status =['Inscripción', 'Revisión', 'Contacto','Aceptada', 'Rechazada']
+      @prospects_total = Prospect.all.count
 
     end
 
