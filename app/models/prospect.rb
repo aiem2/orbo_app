@@ -1,6 +1,6 @@
 class Prospect < ApplicationRecord
     paginates_per 15
-    has_one :logo_url
+    # has_one :logo_url
 
     validates :name, presence: true
     validates :email, presence: true
