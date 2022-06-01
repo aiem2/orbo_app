@@ -1,5 +1,6 @@
 class Partner < ApplicationRecord
     has_many :ratings
+    has_one :logo_url
     
     paginates_per 15
     validates :name, presence: true
