@@ -2,6 +2,7 @@
 
 <br>
 <h5>Selecciona la información para buscar entre nuestros Usuarios:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Usuario'%>
     <%= f.text_field :name_cont %>
@@ -14,6 +15,7 @@
     <%=link_to 'Nueva búsqueda', users_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Partners', users_path, class: "btn", id: "boton" %>
   <% end %>
+</div>
 <br>
 <strong>Cantidad de usuarios: </strong> <%= @users_total%>
 <br>
@@ -21,7 +23,11 @@
 <nav class="navbar text-white justify-content-center">
     <%= paginate @users %>
 </nav>
+<<<<<<< Updated upstream
 <div class="table-responsive">
+=======
+<div class= "table-responsive">
+>>>>>>> Stashed changes
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
@@ -53,7 +59,11 @@
     <% end %>
   <tbody>
 </table>
+<<<<<<< Updated upstream
 <div>
+=======
+</div>
+>>>>>>> Stashed changes
 <nav class="navbar text-white justify-content-center">
     <%= paginate @users %>
 </nav>

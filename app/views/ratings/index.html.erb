@@ -1,5 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
+<<<<<<< Updated upstream
 <h1>Ratings</h1>
 
 <div id="ratings">
@@ -14,6 +15,21 @@
 
 <%= link_to "New rating", new_rating_path %>
 =======
+=======
+<br>
+<h5>Selecciona a nuestro Partner para ver las evaluaciones de nuestros usuarios:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :partner_name_cont, 'Nombre del Partner'%>
+    <%= f.text_field :partner_name_cont %>
+    <%= f.label :segment_eq, 'Segmento'%>
+    <%= f.select :segment_eq, options_for_select(@segments), include_blank: true %>
+    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <%=link_to 'Nueva búsqueda', ratings_path, class: "btn", id: "boton" %>
+    <%=link_to 'Todos las evaluaciones', ratings_path, class: "btn", id: "boton" %>
+  <% end %>
+</div>
+>>>>>>> Stashed changes
 <br>
 <strong>Cantidad de evaluaciones: </strong> <%= @ratings_total%>
 <br>

@@ -2,6 +2,7 @@
 
 <h1>Benefits</h1>
 
+<<<<<<< Updated upstream
 <div id="benefits">
   <% @benefits.each do |benefit| %>
     <%= render benefit %>
@@ -9,6 +10,25 @@
       <%= link_to "Show this benefit", benefit %>
     </p>
   <% end %>
+=======
+<%= link_to 'Generar credencial de Beneficios', credential_path, class:"btn", id:"boton-a"%>
+<br>
+<br>
+
+
+  <h5>Selecciona la información para buscar entre nuestros nuestros Beneficios:</h5>
+    <div class="d-grid gap-2 d-md-flex left-content-md-end">
+      <%= search_form_for @busqueda do |f| %>
+        <%= f.label :area_eq, 'Area'%>
+        <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
+        <%= f.label :región%>
+        <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+        <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+        <%=link_to 'Nueva búsqueda', benefits_path, class: "btn", id: "boton" %>
+        <%=link_to 'Todos los Beneficios', benefits_path, class: "btn", id: "boton" %>
+      <% end %>
+      </div> 
+>>>>>>> Stashed changes
 <br>
 <strong>Cantidad de beneficios: </strong> <%= @benefits_total%>
 <br>
@@ -17,7 +37,11 @@
 <nav class="navbar text-white justify-content-center">
     <%= paginate @benefits %>
 </nav>
+<<<<<<< Updated upstream
 <div class="table-responsive">
+=======
+<div class= "table-responsive">
+>>>>>>> Stashed changes
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
@@ -48,7 +72,11 @@
         <td><%= benefit.state %></td>
         <td><%= benefit.description.truncate(80) %></td>
         <% if current_user.admin?%>
+<<<<<<< Updated upstream
           <td><button><%= link_to 'Mostrar', benefit%></button></td>
+=======
+          <td><button class=tdbutton><%= link_to 'Mostrar', benefit%></button></td>
+>>>>>>> Stashed changes
         <% end%>
         <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></td>
       </tr>

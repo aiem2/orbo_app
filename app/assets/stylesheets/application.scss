@@ -14,6 +14,11 @@
  *= require_self
  */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+@import "bulma";
+
+>>>>>>> Stashed changes
 =======
 @import "bulma";
 
@@ -24,6 +29,7 @@
 
 .titulo{
     color: #640000;
+    font: weight 600px;
 }
 
 #boton{
@@ -33,6 +39,16 @@
     border-radius: 5px;
     border: none;
 }
+<<<<<<< Updated upstream
+=======
+#boton-a{
+    background-color: #c26e08;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+}
+>>>>>>> Stashed changes
 
 #boton-amarillo{
     background-color: #c26e08;
@@ -41,7 +57,6 @@
     border-radius: 5px;
     border: none;
 }
-
 
 #navbarDropdown{
     background-color: #640000;
@@ -59,6 +74,7 @@ iframe {
     margin: 0 auto;
     display: block;
 }
+<<<<<<< Updated upstream
 td button{
     border: none;
     padding: 7px 20px;
@@ -69,8 +85,25 @@ td button{
 
 td,
 th {
+=======
+.tdbutton{
+    background-color: #640000;
+    text-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+}
+
+.td,th {
+>>>>>>> Stashed changes
     padding: 14px 20px;
     text-overflow: auto;
     overflow: auto;
 }
 
+<<<<<<< Updated upstream
+=======
+.table-responsive{
+    overflow-y:hidden
+}
+>>>>>>> Stashed changes
