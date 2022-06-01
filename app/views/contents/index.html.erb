@@ -8,6 +8,7 @@
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros Contenidos descargables:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :title_cont, 'Nombre del Contenido'%>
     <%= f.text_field :title_cont %>
@@ -23,6 +24,7 @@
     <%=link_to 'Nueva búsqueda', contents_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Prospectos', contents_path, class: "btn", id: "boton" %>
   <% end %>
+  </div>
 <br>
 <strong>Cantidad de Contenidos descargables: </strong> <%= @contents_total%>
 <br>
@@ -31,7 +33,7 @@
 <nav class="navbar text-white justify-content-center">
     <%= paginate @contents %>
 </nav>
-
+<div class= "table-responsive">
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
@@ -68,7 +70,7 @@
     <% end %>
   <tbody>
 </table>
-
+</div>
 <nav class="navbar text-white justify-content-center">
     <%= paginate @contents %>
 </nav>
