@@ -6,6 +6,9 @@
     <%= f.label :partner_name_cont, 'Nombre del Partner'%>
     <%= f.text_field :partner_name_cont %>
 
+    <%= f.label :segment_eq, 'Segmento'%>
+    <%= f.select :segment_eq, options_for_select(@segments), include_blank: true %>
+
     <%= f.submit value='Buscar', class: "btn", id: "boton"%>
     <%=link_to 'Nueva búsqueda', ratings_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos las evaluaciones', ratings_path, class: "btn", id: "boton" %>
@@ -27,6 +30,7 @@
       <th scope="col">Partner</th>
       <th scope="col">Fecha Servicio</th>
       <th scope="col">Tipo de Servicio</th>
+      <th scope="col">Segmento</th>
       <th scope="col">Nota</th>
       <th scope="col">Comentario</th>
       <th scope="col">Ver detalles</th>
@@ -40,6 +44,7 @@
         <td><%= rating.partner_name %></td>
         <td><%= rating.date_service.strftime("%d-%m-%Y") %></td>
         <td><%= rating.type_service %></td>
+        <td><%= rating.segment %></td>
         <td><%= rating.rate %></td>
         <td><%= rating.description.truncate(80) %></td>
         <td><%= link_to 'Mostrar', rating%> </td>     

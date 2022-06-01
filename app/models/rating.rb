@@ -20,4 +20,14 @@ class Rating < ApplicationRecord
     @partner_name = Partner.find(id).name
   end
 
+  def segment
+    if self.rate < 5
+      self.segment = 'Baja'
+      elsif self.rate > 4.9 && self.rate < 8
+        self.segment = 'Media'
+      else
+        self.segment = 'Alta'
+    end
+  end
+  
 end

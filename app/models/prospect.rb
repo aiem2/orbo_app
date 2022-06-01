@@ -9,5 +9,9 @@ class Prospect < ApplicationRecord
     validates :liason_name, presence: true
     validates :liason_mail, presence: true
     validates :liason_mail, email: true
+
+    validates :email, email: true
+    validates :logo_url, format: URI::regexp(%w[http https])
+  
     
 end

@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :partner_id, style: "display: block" %>
-    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true  %>
+    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, selected: @partner_id, include_blank: true  %>
   </div>
 
   <div>

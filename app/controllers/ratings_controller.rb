@@ -8,6 +8,7 @@ class RatingsController < InheritedResources::Base
       @busqueda.sorts = ['id desc'] if @busqueda.sorts.empty?
       @ratings = @busqueda.result.page(params[:page])
       @ratings_total = Rating.all.count
+      @segments = ['Baja', 'Media','Alta']
     end
 
     # GET /partners/1 or /partners/1.json
@@ -17,7 +18,7 @@ class RatingsController < InheritedResources::Base
     # GET /partners/new
     def new
       @rating = Rating.new
-      
+      @partner_id = params['partner_id']       
     end
 
     # GET /partners/1/edit
@@ -28,7 +29,7 @@ class RatingsController < InheritedResources::Base
     def create
       @rating = Rating.new(rating_params)
       @user_id = current_user.id
-      @partner_id = Partner.first
+      @rating.segment     
       respond_to do |format|
         if @rating.save
           format.html { redirect_to root_path, notice: "Tu evaluación fue creada con éxito." }
@@ -70,7 +71,7 @@ class RatingsController < InheritedResources::Base
     end
 
     def rating_params
-      params.require(:rating).permit(:date_service, :type_service, :description, :user_id, :partner_id, :rate)
+      params.require(:rating).permit(:date_service, :type_service, :description, :user_id, :partner_id, :rate, :segment)
     end
 
     def must_be_admin
