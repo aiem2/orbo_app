@@ -52,7 +52,12 @@
     <tr>
         <td><%= prospect.id %></td>
         <td><%= prospect.status %></td>
-        <td><%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><% if prospect.logo.attached?%>
+            <%= image_tag prospect.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %>
+        </td>
         <td><%= prospect.area %></td>
         <td><%= prospect.name %></td>
         <td><%= prospect.city %></td>

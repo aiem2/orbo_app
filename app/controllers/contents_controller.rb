@@ -78,7 +78,7 @@ class ContentsController < InheritedResources::Base
     end
 
     def content_params
-      params.require(:content).permit(:title, :date, :description, :download, :city, :state, :logo_url, :area)
+      params.require(:content).permit(:title, :date, :description, :download, :city, :state, :logo_url, :area, :logo)
     end
 
     def must_be_admin

@@ -54,7 +54,11 @@
         <% if current_user.admin? %>
           <td><%= content.id %></td>
         <% end %>
-        <td><%= image_tag content.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><% if content.logo.attached?%>
+            <%= image_tag content.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag content.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %></td>
         <td><%= content.title %></td>
         <td><%= content.area %></td>
         <td><%= content.city %></td>

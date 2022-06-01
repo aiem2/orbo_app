@@ -6,7 +6,7 @@ class ProspectsController < InheritedResources::Base
     def index
       @busqueda = Prospect.ransack(params[:q])
       @busqueda.sorts = ['date_end desc'] if @busqueda.sorts.empty?
-      @prospects = @busqueda.result.page(params[:page])
+      @prospects = @busqueda.result.page(params[:page]).reverse_order
    
       @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
       @regiones = ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes', 'Nacional']
@@ -83,7 +83,7 @@ class ProspectsController < InheritedResources::Base
     end
 
     def prospect_params
-      params.require(:prospect).permit(:name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :status)
+      params.require(:prospect).permit(:name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :status, :comments, :logo, :phone)
     end
 
     def must_be_admin

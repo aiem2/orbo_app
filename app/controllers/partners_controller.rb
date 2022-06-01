@@ -82,7 +82,7 @@ class PartnersController < InheritedResources::Base
     end
 
     def partner_params
-      params.require(:partner).permit(:name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :phone)
+      params.require(:partner).permit(:name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :phone, :logo)
     end
 
     def must_be_admin

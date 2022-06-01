@@ -37,7 +37,7 @@
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
-      <th scope="col">Logo</th>
+      <%# <th scope="col">Logo</th> %>
       <th scope="col">Area</th>
       <th scope="col">Nombre Partner</th>
       <th scope="col">Fecha de inicio</th>
@@ -54,7 +54,7 @@
   <tbody>
     <% @benefits.each do |benefit|%>
     <tr>
-        <td><%= image_tag benefit.partner_logo, :type => :upload, :width => 50, :height => 50, :crop => :fill%></td>
+        <%# <td>= image_tag benefit.partner_logo, :type => :upload, :width => 50, :height => 50, :crop => :fill</td> %>
         <td><%= benefit.area %></td>
 
         <td><%= benefit.partner_name %></td>

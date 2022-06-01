@@ -53,7 +53,12 @@
         <% if current_user.admin?%>
           <td><%= partner.id %></td>
         <% end %>
-        <td><%= image_tag partner.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> </td>
+        <td><% if partner.logo.attached?%>
+            <%= image_tag partner.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag partner.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %>
+        </td>
         <td><%= partner.area %></td>
         <td><%= partner.name %></td>
         <td><%= partner.city %></td>

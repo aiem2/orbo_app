@@ -2,7 +2,11 @@
   <div class="d-flex">
     
     <div class="container col-3"  >
-      <%= image_tag partner.logo_url, :type => :upload%>
+      <% if partner.logo.attached?%>
+            <%= image_tag partner.logo, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag partner.logo_url, :type => :upload, :crop => :fill%> 
+      <% end %>
     </div>
 
     <div class ="container col-5">
