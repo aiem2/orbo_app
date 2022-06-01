@@ -5,10 +5,10 @@ Benefit.create(date_start:"2022-05-26", date_end:"2022-05-31", city:"", state:"N
 Benefit.create(date_start:"2022-05-26", date_end: "2022-05-20", city: "Santiago", state:"Metropolitana", description:"5% de descuento en todas las obras hechas a encargo.", partner_id: 30, area: "Arte")
 
 #Viña El Escorial
-Benefit.create(date_start:"2022-02-01", date_end: "2022-05-01", city: "", state:"Nacional", description:"10% de descuento en compras superiores a $20.000.", partner_id: 3, area: "Vinos")
+Benefit.create(date_start:"2022-02-01", date_end: "2022-05-01", city: "", state:"Nacional", description:"10% de descuento en compras superiores a $20.000.", partner_id: 2, area: "Vinos")
 
 #Chile Concept
-Benefit.create(date_start:"2022-01-01", date_end: "2022-04-01", city: "", state:"Nacional", description:"15% de descuento en tours a nivel nacional.", partner_id: 10, area: "Turismo")
+Benefit.create(date_start:"2022-01-01", date_end: "2022-04-01", city: "", state:"Nacional", description:"15% de descuento en tours a nivel nacional.", partner_id: 19, area: "Turismo")
 
 #Arrecife Secreto
 Benefit.create(date_start:"2022-01-01", date_end: "2022-03-31", city: "Pichilemu", state:"O'Higgins", description:"10% de descuento en menú.", partner_id: 13, area: "Gastronomía")

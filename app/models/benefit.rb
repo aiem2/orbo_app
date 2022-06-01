@@ -12,4 +12,9 @@ class Benefit < ApplicationRecord
     id = self.partner_id
     @partner_name = Partner.find(id).name
   end
+
+  def partner_logo
+    id = self.partner_id
+    @partner_name = Partner.find(id).logo_url
+  end
 end
