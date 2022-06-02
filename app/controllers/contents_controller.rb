@@ -5,7 +5,7 @@ class ContentsController < InheritedResources::Base
   # GET /partners or /partners.json
   def index
     @busqueda = Content.ransack(params[:q])
-    @busqueda.sorts = ['id asc', 'created_at desc'] if @busqueda.sorts.empty?
+    @busqueda.sorts = ['date desc'] if @busqueda.sorts.empty?
     @contents = @busqueda.result.page(params[:page])
  
     @areas = ['Turismo', 'Gastronomía', 'Vinos', 'Arte', 'Entretenimiento']
@@ -38,7 +38,7 @@ class ContentsController < InheritedResources::Base
 
     respond_to do |format|
       if @content.save
-        format.html { redirect_to content_url(@content), notice: "El contenido fue creado con éxito." }
+        format.html { redirect_to content_url(@content), notice: "El Contenido fue creado con éxito." }
         format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class ContentsController < InheritedResources::Base
   def update
     respond_to do |format|
       if @content.update(content_params)
-        format.html { redirect_to content_url(@content), notice: "El beneficio fue actualizado con éxito." }
+        format.html { redirect_to content_url(@content), notice: "El Contenido fue actualizado con éxito." }
         format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -78,7 +78,7 @@ class ContentsController < InheritedResources::Base
     end
 
     def content_params
-      params.require(:content).permit(:title, :date, :description, :download, :city, :state, :logo_url, :area, :logo)
+      params.require(:content).permit(:title, :date, :description, :download, :city, :state, :logo_url, :area, :logo, :file)
     end
 
     def must_be_admin

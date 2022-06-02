@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
         locale = params[:locale] || I18n.default_locale
         I18n.with_locale(locale, &action)
     end
+
+    def after_sign_in_path_for(resource)
+        root_path
+    end
 end

@@ -45,7 +45,6 @@
       <th scope="col">Región</th>
       <th scope="col">Descripción</th>
       <th scope="col">Más detalles</th>
-      <th scope="col">Descargar</th>
     </tr>
   </thead>
   <tbody>
@@ -64,8 +63,7 @@
         <td><%= content.city %></td>
         <td><%= content.state %></td>
         <td><%= content.description.truncate(80) %></td>
-        <td><%= link_to 'Mostrar', content%></td> 
-        <td><%= link_to 'Descargar', content.download, :target => :_blank %></td>     
+        <td><%= link_to 'Mostrar', content%></td>   
       </tr>
     <% end %>
   <tbody>
