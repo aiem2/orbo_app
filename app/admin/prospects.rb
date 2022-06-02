@@ -5,7 +5,7 @@ ActiveAdmin.register Prospect do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :phone
+  permit_params :name, :email, :area, :liason_name, :liason_phone, :liason_mail, :logo_url, :web, :fb, :ig, :description, :address, :city, :state, :phone, :status, :status, :comments
   #
   # or
   #

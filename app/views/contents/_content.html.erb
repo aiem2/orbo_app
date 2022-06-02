@@ -50,7 +50,7 @@
 
       <p>
         <strong>Descargar:</strong>
-        <%= link_to "Link para descargar", content.link, :target => :_blank %>
+        <%= link_to "Link para descargar", rails_blob_path(content.download, disposition: "attachment"), :target => :_blank %>
       </p>
     </div>
 

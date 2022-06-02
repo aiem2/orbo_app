@@ -5,7 +5,7 @@ ActiveAdmin.register Content do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :date, :description, :download, :city, :state
+  permit_params :title, :date, :description, :download, :city, :state, :logo_url, :area, :link
   #
   # or
   #

@@ -5,7 +5,7 @@ ActiveAdmin.register Rating do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :date_service, :type_service, :description, :user_id, :partner_id
+  permit_params :date_service, :type_service, :description, :user_id, :partner_id
   #
   # or
   #
