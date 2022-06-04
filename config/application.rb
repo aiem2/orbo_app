@@ -22,6 +22,8 @@ module OrboApp
     config.i18n.available_locales = [:en, :es]
     config.i18n.default_locale = :es
     config.i18n.fallbacks = true
+
+    # config.assets.initialize_on_precompile = false
   end
 end
 
