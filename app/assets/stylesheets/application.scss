@@ -26,6 +26,7 @@
 .card {
     color: #640000;
     border: 5px solid #640000;
+
 }
 
 #boton{
@@ -79,5 +80,10 @@ td button{
 }
 td button:active, td button:hover {
     background-color: #c26e08;
+    color: white;
+}
+
+button a{
+    text-decoration: none;
     color: white;
 }
