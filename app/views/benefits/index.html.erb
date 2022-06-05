@@ -12,18 +12,20 @@
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros nuestros Beneficios:</h5>
-  <%= search_form_for @busqueda do |f| %>
-    <%= f.label :area_eq, 'Area'%>
-    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
+    <div class="d-grid gap-2 d-md-flex left-content-md-end">
+        <%= search_form_for @busqueda do |f| %>
+        <%= f.label :area_eq, 'Area'%>
+        <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
 
-    <%= f.label :región%>
-    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+        <%= f.label :región%>
+        <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
 
-    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
-  
-    <%=link_to 'Nueva búsqueda', benefits_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Beneficios', benefits_path, class: "btn", id: "boton" %>
-  <% end %>
+        <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    
+        <%=link_to 'Nueva búsqueda', benefits_path, class: "btn", id: "boton" %>
+        <%=link_to 'Todos los Beneficios', benefits_path, class: "btn", id: "boton" %>
+    <% end %>
+    </div>
 <br>
 <strong>Cantidad de beneficios: </strong> <%= @benefits_total%>
 <br>
@@ -34,6 +36,7 @@
     <%= paginate @benefits %>
 </nav>
 
+<div class="table-responsive">
 <table class="table table-light table-stripped mr-5" id="sortTable">
   <thead>
     <tr>
@@ -64,13 +67,14 @@
         <td><%= benefit.state %></td>
         <td><%= benefit.description.truncate(80) %></td>
         <% if current_user.admin?%>
-          <td><%= link_to 'Mostrar', benefit%></td>
+          <td><button><%= link_to 'Mostrar', benefit%></button></td>
         <% end%>
-        <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></td>
+        <td><button><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id) %></button></td>
       </tr>
     <% end %>
   <tbody>
 </table>
+</div>
 
 <nav class="navbar text-white justify-content-center">
     <%= paginate @benefits %>

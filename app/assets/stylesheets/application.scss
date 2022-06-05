@@ -13,13 +13,19 @@
  *= require_tree .
  *= require_self
  */
+ @import 'bulma';
  
- .navbar{
+.navbar{
     background-color: #005f63;
 }
 
 .titulo{
     color: #640000;
+}
+
+.card {
+    color: #640000;
+    border: 5px solid #640000;
 }
 
 #boton{
@@ -62,4 +68,16 @@
 iframe {
     margin: 0 auto;
     display: block;
+}
+td button{
+    background-color: #640000;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+td button:active, td button:hover {
+    background-color: #c26e08;
+    color: white;
 }

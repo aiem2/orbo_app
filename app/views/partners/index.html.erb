@@ -8,6 +8,7 @@
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros nuestros Partners:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Partner'%>
     <%= f.text_field :name_cont %>
@@ -23,6 +24,7 @@
     <%=link_to 'Nueva búsqueda', partners_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Partners', partners_path, class: "btn", id: "boton" %>
   <% end %>
+  </div>
 <br>
 <strong>Cantidad de Partners: </strong> <%= @partners_total%>
 <br>
@@ -64,11 +66,15 @@
         <td><%= partner.city %></td>
         <td><%= partner.state %></td>
         <td><%= partner.description.truncate(80) %></td>
-        <td><%= link_to 'Mostrar', partner%> </td>     
+        <td><button> <%= link_to 'Mostrar', partner%></button> </td>     
       </tr>
     <% end %>
   <tbody>
 </table>
+<<<<<<< Updated upstream
+=======
+</div>
+>>>>>>> Stashed changes
 
 <nav class="navbar text-white justify-content-center">
     <%= paginate @partners %>

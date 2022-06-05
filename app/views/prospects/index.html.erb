@@ -6,6 +6,7 @@
 <% end %>
 <br>
 <h5>Selecciona la información para buscar entre nuestros Prospectos de Partners:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Prospecto'%>
     <%= f.text_field :name_cont %>
@@ -24,6 +25,7 @@
     <%=link_to 'Nueva búsqueda', prospects_path, class: "btn", id: "boton" %>
     <%=link_to 'Todos los Prospectos', prospects_path, class: "btn", id: "boton" %>
   <% end %>
+  </div>
 <br>
 <strong>Cantidad de prospectos: </strong> <%= @prospects_total%>
 <br>
