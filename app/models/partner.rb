@@ -12,5 +12,6 @@ class Partner < ApplicationRecord
     validates :liason_name, presence: true
     validates :liason_mail, presence: true
     validates :liason_mail, email: true
+    self.primary_key = 'id'
   
 end

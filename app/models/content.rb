@@ -7,4 +7,5 @@ class Content < ApplicationRecord
     validates :title, presence: true
     validates :date, presence: true
     validates :state, presence: true
+    self.primary_key = 'id'
 end
