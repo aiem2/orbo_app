@@ -4,11 +4,11 @@
 <h5>Selecciona a nuestro Partner para ver las evaluaciones de nuestros usuarios:</h5>
 <div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
-    <%= f.label :partner_name_cont, 'Nombre del Partner'%>
-    <%= f.text_field :partner_name_cont %>
+    <%= f.label :partner_name_cont, 'Nombre del Partner', class:"mt-2"%>
+    <%= f.text_field :partner_name_cont, class:"mt-2" %>
     <br>
-    <%= f.label :segment_eq, 'Segmento'%>
-    <%= f.select :segment_eq, options_for_select(@segments), include_blank: true %>
+    <%= f.label :segment_eq, 'Segmento', class:"mt-2"%>
+    <%= f.select :segment_eq, options_for_select(@segments), include_blank: true , class:"mt-2"%>
     <br>
     <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
     <%=link_to 'Nueva búsqueda', ratings_path, class: "btn mt-3", id: "boton" %>

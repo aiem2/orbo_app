@@ -8,17 +8,17 @@
 <h5>Selecciona la información para buscar entre nuestros Prospectos de Partners:</h5>
   <div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
-    <%= f.label :name_cont, 'Nombre del Prospecto'%>
-    <%= f.text_field :name_cont %>
+    <%= f.label :name_cont, 'Nombre del Prospecto', class:"mt-2" %>
+    <%= f.text_field :name_cont, class:"mt-2"  %>
     <br>
-    <%= f.label :area_eq, 'Area'%>
-    <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
+    <%= f.label :area_eq, 'Area', class:"mt-2" %>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true , class:"mt-2" %>
     <br>
-    <%= f.label :región%>
-    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+    <%= f.label :región, class:"mt-2" %>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true, class:"mt-2"  %>
     <br>
-    <%= f.label :status%>
-    <%= f.select :status_eq, options_for_select(@status), include_blank: true %>
+    <%= f.label :status, class:"mt-2" %>
+    <%= f.select :status_eq, options_for_select(@status), include_blank: true, class:"mt-2"  %>
     <br>
     <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
   

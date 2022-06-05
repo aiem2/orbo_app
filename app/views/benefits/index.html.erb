@@ -14,11 +14,11 @@
 <h5>Selecciona la información para buscar entre nuestros nuestros Beneficios:</h5>
     <div class="d-grid gap-2 d-md-flex left-content-md-end">
         <%= search_form_for @busqueda do |f| %>
-        <%= f.label :area_eq, 'Area'%>
-        <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
+        <%= f.label :area_eq, 'Area', class:"mt-2" %>
+        <%= f.select :area_eq, options_for_select(@areas), include_blank: true, class:"mt-2"  %>
         <br>
-        <%= f.label :región%>
-        <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
+        <%= f.label :región, class:"mt-2" %>
+        <%= f.select :state_eq, options_for_select(@regiones), include_blank: true, class:"mt-2"  %>
         <br>
         <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
         <%=link_to 'Nueva búsqueda', benefits_path, class: "btn mt-3", id: "boton" %>
