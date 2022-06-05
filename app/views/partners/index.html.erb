@@ -8,7 +8,7 @@
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros nuestros Partners:</h5>
-  <div class="d-grid gap-2 d-md-flex left-content-md-end">
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Partner'%>
     <%= f.text_field :name_cont %>
@@ -18,13 +18,13 @@
 
     <%= f.label :región%>
     <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
-
-    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
   
-    <%=link_to 'Nueva búsqueda', partners_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Partners', partners_path, class: "btn", id: "boton" %>
+    <%=link_to 'Nueva búsqueda', partners_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Partners', partners_path, class: "btn mt-3", id: "boton" %>
   <% end %>
-  </div>
+</div>
 <br>
 <strong>Cantidad de Partners: </strong> <%= @partners_total%>
 <br>

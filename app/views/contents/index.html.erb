@@ -8,6 +8,7 @@
 <br>
 
 <h5>Selecciona la información para buscar entre nuestros Contenidos descargables:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end"> 
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :title_cont, 'Nombre del Contenido'%>
     <%= f.text_field :title_cont %>
@@ -17,12 +18,13 @@
 
     <%= f.label :región%>
     <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
-
-    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
   
-    <%=link_to 'Nueva búsqueda', contents_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Contenidos', contents_path, class: "btn", id: "boton" %>
+    <%=link_to 'Nueva búsqueda', contents_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Contenidos', contents_path, class: "btn mt-3", id: "boton" %>
   <% end %>
+</div>
 <br>
 <strong>Cantidad de Contenidos descargables: </strong> <%= @contents_total%>
 <br>

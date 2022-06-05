@@ -2,18 +2,20 @@
 
 <br>
 <h5>Selecciona la información para buscar entre nuestros Usuarios:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :name_cont, 'Nombre del Usuario'%>
     <%= f.text_field :name_cont %>
 
     <%= f.label :id_eq, 'Id'%>
     <%= f.text_field :id_eq %>
-    
-    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
 
-    <%=link_to 'Nueva búsqueda', users_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Partners', users_path, class: "btn", id: "boton" %>
+    <%=link_to 'Nueva búsqueda', users_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Partners', users_path, class: "btn mt-3", id: "boton" %>
   <% end %>
+</div>
 <br>
 <strong>Cantidad de usuarios: </strong> <%= @users_total%>
 <br>

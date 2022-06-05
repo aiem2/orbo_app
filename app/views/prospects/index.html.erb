@@ -19,11 +19,11 @@
 
     <%= f.label :status%>
     <%= f.select :status_eq, options_for_select(@status), include_blank: true %>
-
-    <%= f.submit value='Buscar', class: "btn", id: "boton"%>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
   
-    <%=link_to 'Nueva búsqueda', prospects_path, class: "btn", id: "boton" %>
-    <%=link_to 'Todos los Prospectos', prospects_path, class: "btn", id: "boton" %>
+    <%=link_to 'Nueva búsqueda', prospects_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Prospectos', prospects_path, class: "btn mt-3", id: "boton" %>
   <% end %>
   </div>
 <br>

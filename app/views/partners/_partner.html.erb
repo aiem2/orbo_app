@@ -7,6 +7,16 @@
           <% else %>
             <%= image_tag partner.logo_url, :type => :upload, :crop => :fill%> 
       <% end %>
+      <br>
+      <br>
+      <br>
+      <%= link_to "Evaluar", new_rating_path(partner_id: @partner), class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to "Partners", partners_path, class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
     </div>
 
     <div class ="container col-5">
@@ -103,14 +113,8 @@
 
     </div>
     
-    <div class="col-4">
-      <%= link_to "Evaluar Partner", new_rating_path(partner_id: @partner), class:"btn", id: "boton" %>
-      <br>
-      <br>
-      <%= link_to "Listado de Partners", partners_path, class:"btn", id: "boton" %>
-      <br>
-      <br>
-      <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
+    <div class="col-3">
+
     </div>
     
   </div>
