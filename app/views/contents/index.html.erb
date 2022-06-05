@@ -12,10 +12,10 @@
   <%= search_form_for @busqueda do |f| %>
     <%= f.label :title_cont, 'Nombre del Contenido'%>
     <%= f.text_field :title_cont %>
-    <br><br>
+    <br>
     <%= f.label :area_eq, 'Area'%>
     <%= f.select :area_eq, options_for_select(@areas), include_blank: true %>
-    <br><br>
+    <br>
     <%= f.label :región%>
     <%= f.select :state_eq, options_for_select(@regiones), include_blank: true %>
     <br>
