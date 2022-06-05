@@ -9,8 +9,8 @@ local:
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: AKIA3CO62GCYWB3IYE7R
-  secret_access_key: 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
+  access_key_id: <%= ENV['AWS_KEY']%>
+  secret_access_key: <%= ENV['AWS_SECRET']%>
   region: us-east-1
   bucket: orboapp
 # Remember not to checkin your GCS keyfile to a repository
