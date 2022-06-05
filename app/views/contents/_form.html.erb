@@ -11,48 +11,52 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :orbo_area, style: "display: block" %>
-    <%= form.select :area, @areas, :prompt => "Selecciones una opción:"%>
-  </div>
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">  
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :orbo_area, style: "display: block", class:"col-form-label" %>
+        <%= form.select :area, @areas, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :logo, style: "display: block" %>
-    <%= form.file_field :logo %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :logo, style: "display: block", class:"col-form-label" %>
+        <%= form.file_field :logo, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :título, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :título, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :title, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :fecha, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fecha, style: "display: block" , class:"col-form-label"%>
+        <%= form.date_field :date, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :descripción, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :descripción, style: "display: block", class:"col-form-label" %>
+        <%= form.text_area :description, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :documento, style: "display: block" %>
-    <%= form.file_field :download %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :documento, style: "display: block", class:"col-form-label" %>
+        <%= form.file_field :download, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :ciudad, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :ciudad, style: "display: block" , class:"col-form-label"%>
+        <%= form.text_field :city, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :región, style: "display: block" %>
-    <%= form.select :state, @regiones, :prompt => 'Seleccione una Región' %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :región, style: "display: block" , class:"col-form-label"%>
+        <%= form.select :state, @regiones, :prompt => 'Seleccione una Región', class:"form-control" %>
+      </div>
+      <br>
+      <br>
+      <div>
+        <%= form.submit "Registrar contenido descargable", class:"btn", id:"boton" %>
+      </div>
+    <% end %>
   </div>
-  <br>
-  <br>
-  <div>
-    <%= form.submit "Registrar contenido descargable", class:"btn", id:"boton" %>
-  </div>
-<% end %>
+</form> 

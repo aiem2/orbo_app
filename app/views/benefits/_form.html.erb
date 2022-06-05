@@ -11,42 +11,46 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :orbo_area, style: "display: block" %>
-    <%= form.select :area, @areas, :prompt => "Selecciones una opción:"%>
-  </div>
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">  
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :orbo_area, style: "display: block", class:"col-form-label" %>
+        <%= form.select :area, @areas, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :fecha_inicio, style: "display: block" %>
-    <%= form.date_field :date_start %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fecha_inicio, style: "display: block", class:"col-form-label" %>
+        <%= form.date_field :date_start , class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :fecha_término, style: "display: block" %>
-    <%= form.date_field :date_end %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fecha_término, style: "display: block", class:"col-form-label" %>
+        <%= form.date_field :date_end , class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :ciudad, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :ciudad, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :city , class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :región, style: "display: block" %>
-    <%= form.select :state, @regiones, :prompt => "Selecciones una opción:"%>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :región, style: "display: block", class:"col-form-label" %>
+        <%= form.select :state, @regiones, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :descripción, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :descripción, style: "display: block", class:"col-form-label" %>
+        <%= form.text_area :description, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :partner_id, style: "display: block" %>
-    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true  %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :partner_id, style: "display: block", class:"col-form-label" %>
+        <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true, class:"form-control"  %>
+      </div>
+      <br>
+      <div>
+        <%= form.submit "Registrar beneficio", class:"btn", id:"boton" %>
+      </div>
+    <% end %>
   </div>
-  <br>
-  <div>
-    <%= form.submit "Registrar beneficio", class:"btn", id:"boton" %>
-  </div>
-<% end %>
+</form> 

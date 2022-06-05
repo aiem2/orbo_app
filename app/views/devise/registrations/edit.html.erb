@@ -4,74 +4,79 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-   <div class="field">
-        <%= f.label :Nombre_completo %><br />
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">  
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :Nombre_completo, class:"col-form-label"%>
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
       </div>
 
-      <div class="field">
-        <%= f.label :nombre_usuario %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :nombre_usuario, class:"col-form-label"%>
         <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name" %>
       </div>
 
-      <div class="field">
-        <%= f.label :mail %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :mail, class:"col-form-label"%>
         <%= f.email_field :email, autocomplete: "email" %>
       </div>
 
-      <div class="field">
-        <%= f.label :teléfono %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :teléfono, class:"col-form-label"%>
         <%= f.text_field :phone, autocomplete: "phone" %>
       </div>
       
-      <div class="field">
-        <%= f.label :ciudad %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :ciudad, class:"col-form-label"%>
         <%= f.text_field :city, autocomplete: "city" %>
 
       </div>
-        <div class="field">
-        <%= f.label :región %><br />
+        <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :región, class:"col-form-label"%>
         <%= f.text_field :state, autocomplete: "state" %>
       </div>
       
-      <div class="field">
-        <%= f.label :fecha_de_nacimiento %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :fecha_de_nacimiento, class:"col-form-label"%>
         <%= f.date_field :dob, autocomplete: "dob" %>
       </div>
 
-      <div class="field">
-        <%= f.label :Género %><br />
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :Género, class:"col-form-label"%>
         <%= f.select :gender, ['Masculino', 'Femenino', 'No binario', 'Prefiero no responder'] %>
       </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(Dejar en blanco si no se quiere cambiar)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> caracteres mínimo</em>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :password %> <i>(Dejar en blanco si no se quiere cambiar)</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"col-form-label"%>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> caracteres mínimo</em>
+        <% end %>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"col-form-label" %>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :password_actual %> <i>(necesitamos la clave actual para actualizar el perfil)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"col-form-label" %>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <br>
+        <%= f.submit "Actualizar perfil", class:"btn", id:"boton" %>
+      </div>
     <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_actual %> <i>(necesitamos la clave actual para actualizar el perfil)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <br>
-    <%= f.submit "Actualizar perfil", class:"btn", id:"boton" %>
-  </div>
-<% end %>
+</form>
+  
 <br>
 <h3>Cancelar la cuenta</h3>
 <br>

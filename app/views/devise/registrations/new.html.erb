@@ -2,58 +2,60 @@
 <h2 class="titulo">Registrarse</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    
-    <div class="field">
-        <%= f.label :Nombre_completo %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">    
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :Nombre_completo, class:"col-form-label" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :nombre_usuario %><br />
-        <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :nombre_usuario, class:"col-form-label"%>
+        <%= f.text_field :nick_name, autofocus: true, autocomplete: "nick_name", class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :mail %><br />
-        <%= f.email_field :email, autocomplete: "email" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :mail, class:"col-form-label"  %>
+        <%= f.email_field :email, autocomplete: "email", class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :teléfono %><br />
-        <%= f.text_field :phone, autocomplete: "phone" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :teléfono , class:"col-form-label" %>
+        <%= f.text_field :phone, autocomplete: "phone", class:"form-control"  %>
       </div>
       
-      <div class="field">
-        <%= f.label :ciudad %><br />
-        <%= f.text_field :city, autocomplete: "city" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :ciudad, class:"col-form-label"  %>
+        <%= f.text_field :city, autocomplete: "city", class:"form-control"  %>
 
       </div>
-        <div class="field">
-        <%= f.label :región %><br />
-        <%= f.select :state, ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes'], :prompt => 'Seleccione una Región' %>
+        <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :región, class:"col-form-label"  %>
+        <%= f.select :state, ['Arica y Parinacota', 'Tarapacá', 'Antofagasta', 'Atacama', 'Coquimbo', 'Valparaíso', 'Metropolitana', "O'Higgins", 'Maule', 'Ñuble', 'Biobío', 'Araucanía', 'Los Ríos','Aysén', 'Magallanes'], :prompt => 'Seleccione una Región', class:"form-control"  %>
       </div>
       
-      <div class="field">
-        <%= f.label :fecha_de_nacimiento %><br />
-        <%= f.date_field :dob, autocomplete: "dob" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :fecha_de_nacimiento, class:"col-form-label"  %>
+        <%= f.date_field :dob, autocomplete: "dob", class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :Género %><br />
-        <%= f.select :gender, ['Masculino', 'Femenino', 'No binario', 'Prefiero no responder'], :prompt => 'Seleccione una opción' %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :Género, class:"col-form-label"  %>
+        <%= f.select :gender, ['Masculino', 'Femenino', 'No binario', 'Prefiero no responder'], :prompt => 'Seleccione una opción', class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :password %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :password, class:"col-form-label"  %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control"  %>
       </div>
 
-      <div class="field">
-        <%= f.label :confirmación_de_password %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= f.label :confirmación_de_password, class:"col-form-label"  %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control"  %>
       </div>
       <br>
       <div class="actions">
@@ -61,6 +63,8 @@
       </div>
     <% end %>
     
-  </div> 
+    </div>
+  </div>
+</form> 
   
 <%= render "devise/shared/links" %>

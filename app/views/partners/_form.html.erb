@@ -11,89 +11,93 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :Nombre_partner, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">   
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :Nombre_partner, style: "display: block" %>
+        <%= form.text_field :name, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :email, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :email, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :orbo_area, style: "display: block" %>
-    <%= form.select :area, @areas, :prompt => "Selecciones una opción:"%>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :orbo_area, style: "display: block", class:"col-form-label" %>
+        <%= form.select :area, @areas, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :logo, style: "display: block" %>
-    <%= form.file_field :logo %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :logo, style: "display: block", class:"col-form-label" %>
+        <%= form.file_field :logo, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :teléfono, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :teléfono, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :phone, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :web, style: "display: block" %>
-    <%= form.text_field :web %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :web, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :web, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :fb, style: "display: block" %>
-    <%= form.text_field :fb %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fb, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :fb, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :ig, style: "display: block" %>
-    <%= form.text_field :ig %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :ig, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :ig , class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :descripción, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :descripción, style: "display: block", class:"col-form-label" %>
+        <%= form.text_area :description , class:"form-control"%>
+      </div>
 
-  <div>
-    <%= form.label :dirección, style: "display: block" %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :dirección, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :address, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :ciudad, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :ciudad, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :city, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :Región, style: "display: block" %>
-    <%= form.select :state, @regiones, :prompt => 'Seleccione una Región' %>
-  </div>
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :Región, style: "display: block", class:"col-form-label" %>
+        <%= form.select :state, @regiones, :prompt => 'Seleccione una Región', class:"form-control" %>
+      </div>
 
-  <div>
-    <% if current_user.admin? %>
+      <div>
+        <% if current_user.admin? %>
+          <br>
+          <h3>Información de uso interno:</h3>
+          <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+            <%= form.label :nombre_contacto, style: "display: block", class:"col-form-label" %>
+            <%= form.text_field :liason_name, class:"form-control" %>
+          </div>
+
+          <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+            <%= form.label :teléfono_contacto, style: "display: block", class:"col-form-label" %>
+            <%= form.text_field :liason_phone, class:"form-control" %>
+          </div>
+
+          <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+            <%= form.label :mail_contacto, style: "display: block", class:"col-form-label" %>
+            <%= form.text_field :liason_mail, class:"form-control" %>
+          </div>
+
+          <% end %>
+        </div>
       <br>
-      <h3>Información de uso interno:</h3>
       <div>
-        <%= form.label :nombre_contacto, style: "display: block" %>
-        <%= form.text_field :liason_name %>
+        <%= form.submit "Crear o actualizar este Partner", class:"btn", id:"boton" %>
       </div>
-
-      <div>
-        <%= form.label :teléfono_contacto, style: "display: block" %>
-        <%= form.text_field :liason_phone %>
-      </div>
-
-      <div>
-        <%= form.label :mail_contacto, style: "display: block" %>
-        <%= form.text_field :liason_mail %>
-      </div>
-
-      <% end %>
-    </div>
-  <br>
-  <div>
-    <%= form.submit "Crear o actualizar este Partner", class:"btn", id:"boton" %>
+    <% end %>
   </div>
-<% end %>
+</form> 
