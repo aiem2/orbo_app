@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <nav class="navbar">
+        <div class="container cont_logo">
+          <a class="navbar-brand" href="/">
+             <%= image_tag "Logo-blanco.png", :width => 40, :height =>40, :crop => :fill, :style => "margin-left:10%; margin-right:2%; margin-top:-20%; margin-bottom:-20%", class:"pt-3"%></a>
+        </div>
+    </nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% unless user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li class="mx-3 fw-semibold"><%= link_to "Ingresar", new_user_session_path, style: "color:white; text-decoration:none" %></li>
+          <li class="mx-3 fw-semibold"><%= link_to "Registrarse", new_user_registration_path, style: "color:white; text-decoration:none" %></li>
+        </ul>
+      <% end %>
+      <% if user_signed_in? %>
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item mx-3 fw-semibold">
+            <%=link_to 'Mapa', maps_show_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mx-3 fw-semibold">
+            <%=link_to 'Beneficios', benefits_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mx-3 fw-semibold">
+            <%=link_to 'Partners', partners_path, style: "color:white; text-decoration:none"%>
+          </li>
+          <li class="nav-item mx-3 fw-semibold">
+            <%=link_to 'Contenido descargable', contents_path, style: "color:white; text-decoration:none"%>
+          </li>
+
+        </ul>
+        <ul>
+          <% if current_user.admin?%>
+            <li class="nav-item mt-4 mx-3 fst-italic">
+              <%=link_to 'Prospecto de Partners', prospects_path, style: "color:white; text-decoration:none", class:"mx-2"%> 
+              <%=link_to 'Evaluaciones', ratings_path, style: "color:white; text-decoration:none", class:"mx-2"%>
+              <%=link_to 'Usuarios', users_path, style: "color:white; text-decoration:none", class:"mx-2"%>
+            </li>
+          <% else %>
+            <li class="nav-item mt-4 mx-3 fst-italic">
+              <%=link_to 'Inscribirme como Partner', new_prospect_path, style: "color:white; text-decoration:none"%>
+            </li>
+          <% end %>
+        </ul>
+      
+        <div class="nav-item dropdown">
+          <button class="btn bnav-link dropdown-toggle mx-5 fw-semibold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white; text-decoration:none">
+            Cuenta
+          </button>
+          <ul class="dropdown-menu px-3 text-center" aria-labelledby="navbarDropdown" style="background-color: #c26e08; color: white">
+            <li><%=link_to 'Editar mi Perfil', edit_user_registration_path, style:"color:white; text-decoration:none", class:"fw-normal"  %></li>
+            <% unless current_user.admin?%>
+              <li><hr class="dropdown-divider"></li>
+              <%= link_to "Evaluar Partner", new_rating_path, style:"color:white; text-decoration:none", class:"fw-normal" %>
+            <% end %>
+            <li><hr class="dropdown-divider"></li>
+            <li><%=link_to 'Credencial de beneficios', credential_path, style:"color:white; text-decoration:none", class:"fw-normal"  %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Salir", destroy_user_session_path, data:{turbo_method: :delete}, style:"color:white; text-decoration:none", class:"fw-normal"  %></li>
+          </ul>
+        </div>
+      
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+

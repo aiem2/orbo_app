@@ -1,0 +1,79 @@
+<h1 class="titulo">Partners</h1>
+
+<% if current_user.admin? %>
+  <br>
+  <%= link_to 'Nuevo Partner', new_partner_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+
+<h5>Selecciona la información para buscar entre nuestros nuestros Partners:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :name_cont, 'Nombre del Partner', class:"mt-2" %>
+    <%= f.text_field :name_cont, class:"mt-2"  %>
+    <br>
+    <%= f.label :area_eq, 'Area', class:"mt-2" %>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true , class:"mt-2" %>
+    <br>
+    <%= f.label :región, class:"mt-2" %>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true, class:"mt-2"  %>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', partners_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Partners', partners_path, class: "btn mt-3", id: "boton" %>
+  <% end %>
+</div>
+<br>
+<strong>Cantidad de Partners: </strong> <%= @partners_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @partners %>
+</nav>
+
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <% if current_user.admin?%>
+        <th scope="col">Id</th>
+      <% end %>
+      <th scope="col">Logo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Partner</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @partners.each do |partner|%>
+    <tr>
+        <% if current_user.admin?%>
+          <td><%= partner.id %></td>
+        <% end %>
+        <td><% if partner.logo.attached?%>
+            <%= image_tag partner.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag partner.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %>
+        </td>
+        <td><%= partner.area %></td>
+        <td><%= partner.name %></td>
+        <td><%= partner.city %></td>
+        <td><%= partner.state %></td>
+        <td><%= partner.description.truncate(80) %></td>
+        <td><button> <%= link_to 'Mostrar', partner%></button> </td>     
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @partners %>
+</nav>

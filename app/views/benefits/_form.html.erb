@@ -1,0 +1,56 @@
+<%= form_with(model: benefit) do |form| %>
+  <% if benefit.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(benefit.errors.count, "errores") %> no permitieron que se registre este beneficio :</h2>
+
+      <ul>
+        <% benefit.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<form class="ml-5 align-items-center" >
+  <div class="container-fluid" id="form_prospect">  
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :orbo_area, style: "display: block", class:"col-form-label" %>
+        <%= form.select :area, @areas, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fecha_inicio, style: "display: block", class:"col-form-label" %>
+        <%= form.date_field :date_start , class:"form-control"%>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :fecha_término, style: "display: block", class:"col-form-label" %>
+        <%= form.date_field :date_end , class:"form-control"%>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :ciudad, style: "display: block", class:"col-form-label" %>
+        <%= form.text_field :city , class:"form-control"%>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :región, style: "display: block", class:"col-form-label" %>
+        <%= form.select :state, @regiones, :prompt => "Selecciones una opción:", class:"form-control"%>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :descripción, style: "display: block", class:"col-form-label" %>
+        <%= form.text_area :description, class:"form-control" %>
+      </div>
+
+      <div class="field col-9 col-lg-4 mb-3 ms-3 mt-3">
+        <%= form.label :partner_id, style: "display: block", class:"col-form-label" %>
+        <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, include_blank: true, class:"form-control"  %>
+      </div>
+      <br>
+      <div>
+        <%= form.submit "Registrar beneficio", class:"btn", id:"boton" %>
+      </div>
+    <% end %>
+  </div>
+</form> 

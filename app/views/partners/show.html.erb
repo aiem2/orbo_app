@@ -1,0 +1,9 @@
+<h3 class="titulo"><%= @partner.name %></h3>
+<%= render @partner %>
+<br>
+<h3 class="titulo"> Evaluaciones de otros usuarios:</h3>
+<% if @partner.ratings.exists? %>
+    <%= render 'ratings' %>
+    <% else %>
+    <p>Este Partner aún no tiene evaluaciones.</p>
+<% end %>

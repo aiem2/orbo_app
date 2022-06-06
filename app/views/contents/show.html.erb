@@ -1,0 +1,11 @@
+<h3 class="titulo"><%= @content.title %></h3>
+<br>
+<%= render @content %>
+
+  <% if current_user.admin?%>
+    <%= link_to "Editar Contenido", edit_content_path(@content) %>
+    <br>
+    <br>
+    <%= button_to "Eliminar Contenido", @content, method: :delete, class: "btn", id:"boton" %>
+  <% end%>
+

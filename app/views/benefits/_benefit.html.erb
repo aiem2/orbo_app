@@ -1,0 +1,38 @@
+<div id="<%= dom_id benefit %>">
+  <td><%= link_to 'Mostrar Partner', partner_path(id: benefit.partner_id), class:"btn", id:"boton" %></td>
+  <br>
+  <br>
+  <p>
+    <strong>Área:</strong>
+    <%= benefit.area %>
+  </p>
+  
+  <p>
+    <strong>Partner:</strong>
+    <%= benefit.partner_name %>
+  </p>
+  <p>
+    <strong>Fecha de inicio:</strong>
+    <%= benefit.date_start %>
+  </p>
+
+  <p>
+    <strong>Fecha de término:</strong>
+    <%= benefit.date_end %>
+  </p>
+
+  <p>
+    <strong>Ciudad:</strong>
+    <%= benefit.city %>
+  </p>
+
+  <p>
+    <strong>Región:</strong>
+    <%= benefit.state %>
+  </p>
+
+  <p>
+    <strong>Descripción:</strong>
+    <%= benefit.description %>
+  </p>
+</div>

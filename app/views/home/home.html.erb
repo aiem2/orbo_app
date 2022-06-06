@@ -1,0 +1,52 @@
+
+<div class="d-flex justify-content-center">
+    <%= image_tag 'logo.png', alt: 'Logo Orbo Chile', class:"col-3 col-sm-1"%>    
+</div>
+<br>
+<div class="d-flex justify-content-center text-center">
+    <h1>¡Enamórate de Chile con Orbo!</h1>
+</div>
+<br>
+<div class="container d-flex justify-content-center text-center">
+    <h4 class="titulo">¡Revisa el Orbo Mapa para encontrar al Partner que buscas!</h4>
+</div>
+
+<div class="container d-flex justify-content-center mt-4 mb-2">
+    <%=link_to '¿Qué hay cerca mío?', maps_show_path, class:"btn btn-lg", id:"boton"%>
+</div>
+
+<br>
+
+<div class="row d-flex justify-content-center">
+
+    <div class="card mx-3 my-2" style="width: 18rem" id="card_home">
+        <%= image_tag 'beneficios.png', alt: 'Beneficios de nuestros Partners', class:"mt-2", id:"img_cred"%>
+        <div class="card-body row">
+            <h5 class="card-title titulo center fw-bolder">Orbo Beneficios</h5>
+            <p class="card-text titulo">Aprovecha todos los beneficios de nuestros Partners</p>
+        </div>
+        <%=link_to 'Beneficios', benefits_path, class:"btn mb-4", id:"boton-amarillo"%>
+    </div>
+
+    <div class="card mx-3 my-2" style="width: 18rem" id="card_home">
+        <%= image_tag 'partners.png', alt: 'Nuestros Partners', class:"mt-2" , id:"img_cred"%>
+        <div class="card-body">
+            <h5 class="card-title titulo center fw-bolder">Orbo Partners</h5>
+            <p class="card-text titulo">Sorpréndete con nuestro catálogo de Partners</p>
+        </div>
+        <%=link_to 'Orbo Partners', partners_path, class:"btn mb-4", id:"boton-amarillo"%>
+    </div>
+
+    <div class="card mx-3 my-2" style="width: 18rem" id="card_home" >
+        <%= image_tag 'descargas.png', alt: 'Descarga nuestro material', class:"mt-2" , id:"img_cred"%>
+        <div class="card-body">
+            <h5 class="card-title titulo center fw-bolder">Orbo Descargas</h5>
+            <p class="card-text titulo">Aprende con nuestro contenido colaborativo</p>
+        </div>
+        <%=link_to 'Orbo Descargas', contents_path, class:"btn mb-4", id:"boton-amarillo"%>
+    </div>
+
+</div>
+<br>
+
+

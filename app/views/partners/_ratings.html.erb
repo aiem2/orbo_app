@@ -1,0 +1,19 @@
+<strong> Evaluaciones: </strong><%= @rates %>
+<br>
+<strong> Nota promedio: </strong><%= @average.round(1) %>
+<br>
+<% @ratings.each do |rating|%>
+    <br>
+    <strong>Usuario:</strong>
+    <%= rating.user_name%>
+    <br>
+    <strong>Fecha del servicio:</strong>
+    <%= rating.date_service.strftime("%d-%m-%Y")%>
+    <br>
+    <strong>Nota:</strong>
+    <%= rating.rate%>
+    <br>
+    <strong>Comentarios:</strong>
+    <%= rating.description%>
+    <br>
+<% end%>

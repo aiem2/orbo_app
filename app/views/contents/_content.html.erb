@@ -1,0 +1,62 @@
+<div id="<%= dom_id content %>">
+  <div class="d-flex">
+    
+    <div class="container col-3"  >
+      <% if content.logo.attached?%>
+            <%= image_tag content.logo, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag content.logo_url, :type => :upload, :crop => :fill%> 
+      <% end %>
+    </div>
+
+    <div class ="container col-5">
+      <br>
+      <% if current_user.admin? %>
+        <p>
+          <strong>Contenido Id:</strong>
+          <%= content.id %>
+        </p>
+      <% end %>
+       
+      <p>
+        <strong>Título:</strong>
+        <%= content.title %>
+      </p>
+      
+      <p>
+        <strong>Orbo Área:</strong>
+        <%= content.area %>
+      </p>
+      
+      <p>
+        <strong>Fecha:</strong>
+        <%= content.date.strftime("%d-%m-%Y") %>
+      </p>
+   
+      <p>
+        <strong>Ciudad:</strong>
+        <%= content.city %>
+      </p>
+
+      <p>
+        <strong>Región:</strong>
+        <%= content.state %>
+      </p>
+
+      <p>
+        <strong>Descripción:</strong>
+        <%= content.description %>
+      </p>
+
+      <p>
+        <strong>Descargar:</strong>
+        <%= link_to "Link para descargar", rails_blob_path(content.download, disposition: "attachment"), :target => :_blank %>
+      </p>
+    </div>
+
+    <div class="col-3">
+      <%= link_to "Listado de contenido descargable", contents_path, class:"btn", id: "boton" %>
+    </div>
+
+  </div>  
+

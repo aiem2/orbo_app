@@ -1,0 +1,63 @@
+<h1 class="titulo">Usuarios</h1>
+
+<br>
+<h5>Selecciona la información para buscar entre nuestros Usuarios:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :name_cont, 'Nombre del Usuario', class:"mt-2"%>
+    <%= f.text_field :name_cont, class:"mt-2" %>
+    <br>
+    <%= f.label :id_eq, 'Id', class:"mt-2"%>
+    <%= f.text_field :id_eq, class:"mt-2" %>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
+
+    <%=link_to 'Nueva búsqueda', users_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Usuarios', users_path, class: "btn mt-3", id: "boton" %>
+  <% end %>
+</div>
+<br>
+<strong>Cantidad de usuarios: </strong> <%= @users_total%>
+<br>
+<br>
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @users %>
+</nav>
+
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Nick Name</th>
+      <th scope="col">Género</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+    <tr>
+        <td><%= user.id %></td>
+        <td><%= user.category %></td>
+        <td><%= user.name %></td>
+        <td><%= user.nick_name %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.city %></td>
+        <td><%= user.state %></td>
+
+    </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @users %>
+</nav>

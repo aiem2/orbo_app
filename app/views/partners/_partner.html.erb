@@ -1,0 +1,122 @@
+<div id="<%= dom_id partner %>">
+  <div class="d-flex">
+    
+    <div class="container col-3"  >
+      <% if partner.logo.attached?%>
+            <%= image_tag partner.logo, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag partner.logo_url, :type => :upload, :crop => :fill%> 
+      <% end %>
+      <br>
+      <br>
+      <br>
+      <%= link_to "Evaluar", new_rating_path(partner_id: @partner), class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to "Partners", partners_path, class:"btn", id: "boton" %>
+      <br>
+      <br>
+      <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
+    </div>
+
+    <div class ="container col-9">
+      <br>
+      <% if current_user.admin? %>
+        <p>
+          <strong>Partner Id:</strong>
+          <%= partner.id %>
+        </p>
+      <% end %>
+       
+      <p>
+        <strong>Nombre Partner:</strong>
+        <%= partner.name %>
+      </p>
+      
+      <p>
+        <strong>Orbo Área:</strong>
+        <%= partner.area %>
+      </p>
+      
+      <p>
+        <strong>Whatsapp:</strong>
+        <%= link_to "+#{partner.phone}", "https://api.whatsapp.com/send?phone=#{partner.phone}", :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= mail_to partner.email, partner.email%>
+      </p>
+
+      
+      <p>
+        <strong>Página web:</strong>
+        <%= link_to partner.name, partner.web, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Facebook:</strong>
+        <%= link_to partner.name, partner.fb, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Instagram:</strong>
+        <%= link_to partner.name, partner.ig, :target => :_blank %>
+      </p>
+
+      <p>
+        <strong>Descripción:</strong>
+        <%= partner.description %>
+      </p>
+
+      <p>
+        <strong>Dirección:</strong>
+        <%= partner.address %>
+      </p>
+
+      <p>
+        <strong>Ciudad:</strong>
+        <%= partner.city %>
+      </p>
+
+      <p>
+        <strong>Región:</strong>
+        <%= partner.state %>
+      </p>
+      <% if current_user.admin? %>
+    <br>
+    <h3>Información de uso interno:</h3>
+    <p>
+      <strong>Nombre de contacto:</strong>
+      <%= partner.liason_name %>
+    </p>
+
+    <p>
+      <strong>Teléfono de contacto:</strong>
+      <%= link_to "+#{partner.liason_phone}", "https://api.whatsapp.com/send?phone=#{partner.liason_phone}", :target => :_blank %>
+    </p>
+
+    <p>
+      <strong>Mail de contacto:</strong>
+      <%= mail_to partner.liason_mail, partner.liason_mail%>
+    </p>
+
+    <%= link_to "Editar Partner", edit_partner_path(@partner), class:"btn", id:"boton" %>
+    <br>
+    <br>
+    <%= button_to "Eliminar Partner", @partner, method: :delete, class: "btn", id:"boton" %>
+    <br>
+    <br>
+
+  <% end %>
+
+
+    </div>
+    
+    <div class="col-3">
+
+    </div>
+    
+  </div>
+
+</div> 

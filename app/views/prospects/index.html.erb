@@ -1,0 +1,78 @@
+<h1 class="titulo">Prospecto de Partners</h1>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Nuevo Prospecto', new_prospect_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+<h5>Selecciona la información para buscar entre nuestros Prospectos de Partners:</h5>
+  <div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :name_cont, 'Nombre del Prospecto', class:"mt-2" %>
+    <%= f.text_field :name_cont, class:"mt-2"  %>
+    <br>
+    <%= f.label :area_eq, 'Area', class:"mt-2" %>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true , class:"mt-2" %>
+    <br>
+    <%= f.label :región, class:"mt-2" %>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true, class:"mt-2"  %>
+    <br>
+    <%= f.label :status, class:"mt-2" %>
+    <%= f.select :status_eq, options_for_select(@status), include_blank: true, class:"mt-2"  %>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', prospects_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Prospectos', prospects_path, class: "btn mt-3", id: "boton" %>
+  <% end %>
+  </div>
+<br>
+<strong>Cantidad de prospectos: </strong> <%= @prospects_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>
+
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Status</th>
+      <th scope="col">Logo</th>
+      <th scope="col">Area</th>
+      <th scope="col">Nombre Prospecto</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @prospects.each do |prospect|%>
+    <tr>
+        <td><%= prospect.id %></td>
+        <td><%= prospect.status %></td>
+        <td><% if prospect.logo.attached?%>
+            <%= image_tag prospect.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag prospect.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %>
+        </td>
+        <td><%= prospect.area %></td>
+        <td><%= prospect.name %></td>
+        <td><%= prospect.city %></td>
+        <td><%= prospect.state %></td>
+        <td><%= prospect.description.truncate(80) %></td>
+        <td><button><%= link_to 'Mostrar', prospect%></button></td>     
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @prospects %>
+</nav>

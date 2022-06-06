@@ -1,0 +1,76 @@
+<h1 class="titulo">Contenido descargable</h1>
+
+<% if current_user.admin? %>
+  <br>
+  <%= link_to 'Nuevo Contenido descargable', new_content_path, class: "btn", id: "boton"%>
+  <br>
+<% end %>
+<br>
+
+<h5>Selecciona la información para buscar entre nuestros Contenidos descargables:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end"> 
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :title_cont, 'Nombre del Contenido', class:"mt-2" %>
+    <%= f.text_field :title_cont, class:"mt-2"  %>
+    <br>
+    <%= f.label :area_eq, 'Area', class:"mt-2" %>
+    <%= f.select :area_eq, options_for_select(@areas), include_blank: true, class:"mt-2"  %>
+    <br>
+    <%= f.label :región, class:"mt-2" %>
+    <%= f.select :state_eq, options_for_select(@regiones), include_blank: true , class:"mt-2" %>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
+  
+    <%=link_to 'Nueva búsqueda', contents_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos los Contenidos', contents_path, class: "btn mt-3", id: "boton" %>
+  <% end %>
+</div>
+<br>
+<strong>Cantidad de Contenidos descargables: </strong> <%= @contents_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @contents %>
+</nav>
+
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <% if current_user.admin?%>
+        <th scope="col">Id</th>
+      <% end %>
+      <th scope="col">Portada</th>
+      <th scope="col">Título</th>
+      <th scope="col">Area</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Región</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Más detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contents.each do |content|%>
+    <tr>
+        <% if current_user.admin? %>
+          <td><%= content.id %></td>
+        <% end %>
+        <td><% if content.logo.attached?%>
+            <%= image_tag content.logo, :width => 50, :height => 50, :crop => :fill%></td>
+          <% else %>
+            <%= image_tag content.logo_url, :type => :upload, :width => 50, :height => 50, :crop => :fill%> 
+          <% end %></td>
+        <td><%= content.title %></td>
+        <td><%= content.area %></td>
+        <td><%= content.city %></td>
+        <td><%= content.state %></td>
+        <td><%= content.description.truncate(80) %></td>
+        <td><%= link_to 'Mostrar', content%></td>   
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @contents %>
+</nav>

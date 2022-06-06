@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @benefit %>
+
+<div>
+  <%= link_to "Editar el beneficio", edit_benefit_path(@benefit) %> |
+  <%= link_to "Volver a beneficios", benefits_path %>
+  <br>
+  <br>
+  <%= button_to "Eliminar beneficio", @benefit, method: :delete, class:"btn", id:"boton" %>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_service: 2022-06-06
+  type_service: MyString
+  description: MyText
+  rate: 1.5
+  segment: MyString
+  user: one
+  partner: one
+
+two:
+  date_service: 2022-06-06
+  type_service: MyString
+  description: MyText
+  rate: 1.5
+  segment: MyString
+  user: two
+  partner: two

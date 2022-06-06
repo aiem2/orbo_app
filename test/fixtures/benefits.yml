@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_start: 2022-06-06
+  date_end: 2022-06-06
+  city: MyString
+  state: MyString
+  description: MyText
+  area: MyString
+  partner: one
+
+two:
+  date_start: 2022-06-06
+  date_end: 2022-06-06
+  city: MyString
+  state: MyString
+  description: MyText
+  area: MyString
+  partner: two

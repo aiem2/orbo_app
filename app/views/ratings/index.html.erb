@@ -1,0 +1,62 @@
+<h1 class="titulo">Evaluaciones de nuestros usuarios:</h1>
+
+<br>
+<h5>Selecciona a nuestro Partner para ver las evaluaciones de nuestros usuarios:</h5>
+<div class="d-grid gap-2 d-md-flex left-content-md-end">
+  <%= search_form_for @busqueda do |f| %>
+    <%= f.label :partner_name_cont, 'Nombre del Partner', class:"mt-2"%>
+    <%= f.text_field :partner_name_cont, class:"mt-2" %>
+    <br>
+    <%= f.label :segment_eq, 'Segmento', class:"mt-2"%>
+    <%= f.select :segment_eq, options_for_select(@segments), include_blank: true , class:"mt-2"%>
+    <br>
+    <%= f.submit value='Buscar', class: "btn mt-3", id: "boton"%>
+    <%=link_to 'Nueva búsqueda', ratings_path, class: "btn mt-3", id: "boton" %>
+    <%=link_to 'Todos las evaluaciones', ratings_path, class: "btn mt-3", id: "boton" %>
+  <% end %>
+</div>
+<br>
+<strong>Cantidad de evaluaciones: </strong> <%= @ratings_total%>
+<br>
+<br>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>
+
+<div class="table-responsive">
+<table class="table table-light table-stripped mr-5" id="sortTable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Partner</th>
+      <th scope="col">Fecha Servicio</th>
+      <th scope="col">Tipo de Servicio</th>
+      <th scope="col">Segmento</th>
+      <th scope="col">Nota</th>
+      <th scope="col">Comentario</th>
+      <th scope="col">Ver detalles</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating|%>
+    <tr>
+        <td><%= rating.id %></td>
+        <td><%= rating.user_name %></td>
+        <td><%= rating.partner_name %></td>
+        <td><%= rating.date_service.strftime("%d-%m-%Y") %></td>
+        <td><%= rating.type_service %></td>
+        <td><%= rating.segment %></td>
+        <td><%= rating.rate %></td>
+        <td><%= rating.description.truncate(80) %></td>
+        <td><button><%= link_to 'Mostrar', rating%></button></td>     
+      </tr>
+    <% end %>
+  <tbody>
+</table>
+</div>
+
+<nav class="navbar text-white justify-content-center">
+    <%= paginate @ratings %>
+</nav>

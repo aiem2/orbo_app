@@ -1,0 +1,49 @@
+<%= form_with(model: rating) do |form| %>
+  <% if rating.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rating.errors.count, "error") %> no permitieron registrar tu evaluación:</h2>
+
+      <ul>
+        <% rating.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+
+  <div>
+    <%= form.label :partner_id, style: "display: block" %>
+    <%= form.collection_select :partner_id, Partner.order(:name),:id,:name, selected: @partner_id, include_blank: true  %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_del_servicio, style: "display: block" %>
+    <%= form.date_field :date_service %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_de_servicio, style: "display: block" %>
+    <%= form.text_field :type_service %>
+  </div>
+
+  <div>
+    <%= form.label :descripción, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :nota, style: "display: block" %>
+    <%= form.select :rate, [1,2,3,4,5,6,7,8,9,10], :prompt => 'Seleccione nota'%>
+  </div>
+
+  <br>
+  <div>
+    <%= form.submit "Generar mi evaluación", class:"btn", id:"boton"%>
+  </div>
+<% end %>
+

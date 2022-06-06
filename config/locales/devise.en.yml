@@ -1,0 +1,65 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: "Su correo electrónico ha sido registrado con éxito."
+      send_instructions: "Recibirá un email con isntrucciones de cómo confirmar su correo en algunos minutos."
+      send_paranoid_instructions: "Si su correo está registrado en nuestra base de datos, recibirá un  email con isntrucciones para confirmar su correo en algunos minutos."
+    failure:
+      already_authenticated: "Ya ingresó al sistema."
+      inactive: "Su cuenta aún no ha sido activada."
+      invalid: "%{authentication_keys} o clave inválidos."
+      locked: "Su cuenta se encuentra bloqueada."
+      last_attempt: "Le queda un intento antes de que se bloquee su cuenta."
+      not_found_in_database: "%{authentication_keys} o clave inválidos."
+      timeout: "Su sesión expiró, por favor ingresar nuevamente."
+      unauthenticated: "Necesita ingresar o registrarse para continuar."
+      unconfirmed: "Debe confirmar su correo antes de continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucciones de confirmación"
+      reset_password_instructions:
+        subject: "Recuperación de clave"
+      unlock_instructions:
+        subject: "Instrucción para desbloquear cuenta"
+      email_changed:
+        subject: "Cambio de email"
+      password_change:
+        subject: "Cambio de clave"
+    omniauth_callbacks:
+      failure: "No se puede autentificar %{kind} por \"%{reason}\"."
+      success: "Autentificado con éxito %{kind}."
+    passwords:
+      no_token: "No puede acceder desde el email de recuperación de clave. Si es su caso, asegúrese de haber copiado la URL completa."
+      send_instructions: "Recibirá un email con instrucciones para recuperar su clave en unos minutos."
+      send_paranoid_instructions: "Si su correo está registrado en nuestra base de datos, recibirá un  email con isntrucciones para recuperar su clave en algunos minutos."
+      updated: "Su clave fue cambiada con éxito, ahora ya se encuentra dentro de la plataforma."
+      updated_not_active: "Su clave fue cambiada con éxito"
+    registrations:
+      destroyed: "¡Hasta luego! Su cuenta fue eliminada con éxito."
+      signed_up: "¡Felicitaciones! Su registro se realizó con éxito"
+      signed_up_but_inactive: "Se registró con éxito, sin embargo, para continuar debe activar su cuenta."
+      signed_up_but_locked: "Se registró con éxito, sin embargo, su cuenta se encuentra bloquada."
+      signed_up_but_unconfirmed: "Se envió un  mensaje con un link de confirmación de su cuenta a su correo. Por favor seguir las instrucciones."
+      update_needs_confirmation: "Actualizó su perfil con éxito, sin embargo, necesitamos confirmar su nuevo correo. Por favor revisar su casilla y seguir las instrucciones."
+      updated: "Su cuenta fue actualizada con éxito."
+      updated_but_not_signed_in: "Su cuenta se actualizó con éxito, sin embargo, al cambiar su clave, debe ingresar nuevamente."
+    sessions:
+      signed_in: "Ingreso exitoso."
+      signed_out: "Salida exitosa."
+      already_signed_out: "Ya salió del sistema."
+    unlocks:
+      send_instructions: "Recibirá un email con isntrucciones de cómo desbloquar su cuenta en algunos minutos."
+      send_paranoid_instructions: "Si su correo está registrado en nuestra base de datos, recibirá un  email con isntrucciones para desbloquar su cuenta en algunos minutos."
+      unlocked: "Su cuenta se desbloqueó con éxito, por favor ingresar nuevamente."
+  errors:
+    messages:
+      already_confirmed: "ya se encuentra confirmado, por favor intentar ingresar"
+      confirmation_period_expired: "necesita ser confirmado dentro de %{period}, por favor solicitar uno nuevo"
+      expired: "expiró, por favor solicitar uno nuevo"
+      not_found: "no encontradao"
+      not_locked: "no se encontraba bloqueado"
+      not_saved:
+        one: "1 error no permitió el registro de este %{resource}:"
+        other: "%{count} errores no permitieron el registro de este %{resource}:"

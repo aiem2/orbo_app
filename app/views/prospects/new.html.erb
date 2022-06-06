@@ -1,0 +1,16 @@
+<h1 class="titulo">Quiero ser un Orbo Partner</h1>
+
+<%= render "form", prospect: @prospect %>
+
+<br>
+
+<div>
+  <% if current_user.admin?%>
+    <%= link_to "Volver a prospectos", prospects_path, class:"btn", id:"boton" %>
+    <br>
+    <% else %>
+    <%= link_to 'Volver', :back , class:"btn", id:"boton"%>
+  <% end %>
+  
+  
+</div>

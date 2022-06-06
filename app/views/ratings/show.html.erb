@@ -1,0 +1,9 @@
+<%= render @rating %>
+
+<div>
+  <%= link_to "Modificar esta evaluación", edit_rating_path(@rating) %> |
+  <%= link_to "Listado de evaluaciones", ratings_path %>
+  <br>
+  <br>
+  <%= button_to "Eliminar esta evaluación", @rating, method: :delete, class:"btn", id:"boton" %>
+</div>
