@@ -48,10 +48,7 @@
         <%= content.description %>
       </p>
 
-      <p>
-        <strong>Descargar:</strong>
-        <%= link_to "Link para descargar", rails_blob_path(content.download, disposition: "attachment"), :target => :_blank %>
-      </p>
+      <button style="border-radius: 5px"><%= link_to 'Descargar', rails_blob_path(content.download, disposition: "attachment"), :target => :_blank%></button>
     </div>
 
     <div class="col-3">
