@@ -1,0 +1,1 @@
+AdminUser.create(email: "comunidad@orbochile.com", password: "orboap2022")

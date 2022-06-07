@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'benefits/credential', to: 'benefits#credential', as: 'credential'
   resources :benefits
   resources :contents
@@ -8,8 +10,7 @@ Rails.application.routes.draw do
   
   get 'maps/show'
   
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
   # devise_for :users, controllers: {sessions: 'users/sessions'}
   devise_for :users, controllers: {registrations: 'users/registrations'}
   resources :users
