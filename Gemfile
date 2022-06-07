@@ -87,3 +87,4 @@ gem 'rails-i18n'
 gem 'email_validator'
 gem 'aws-sdk-s3'
 gem 'mini_magick'
+gem "image_processing", ">= 1.2"
